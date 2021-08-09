@@ -12,4 +12,22 @@
         tools:layout="@layout/fragment_login">
     </fragment>
 
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="op.mobile.app.dev.mandha1.navigation.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="op.mobile.app.dev.mandha1.navigation.ui.dashboard.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="op.mobile.app.dev.mandha1.navigation.ui.notifications.NotificationsFragment"
+        android:label="Notifications"
+        tools:layout="@layout/fragment_notifications" />
+
 </navigation>
