@@ -1,7 +1,7 @@
 package op.mobile.app.dev.mandha1.travelling
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -18,7 +18,8 @@ class MainActivity : AppCompatActivity() {
         val btmNavView: BottomNavigationView = findViewById(R.id.btm_nav_view)
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        btmNavView.setupWithNavController(navHostFragment.navController)
+        val navController = navHostFragment.navController
+        btmNavView.setupWithNavController(navController)
 
     }
 }
