@@ -10,7 +10,17 @@
         android:name="op.mobile.app.dev.mandha1.travelling.ui.login.LoginFragment"
         android:label="Login"
         tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_fragment_to_home_fragment"
+            app:destination="@id/navigation_home" />
     </fragment>
+
+    <fragment
+        android:id="@+id/navigation_splashscreen"
+        android:name="op.mobile.app.dev.mandha1.travelling.ui.splashscreen.SplashScreenFragment"
+        android:label="SplashScreen"
+        tools:layout="@layout/fragment_splash_screen" />
+
 
     <fragment
         android:id="@+id/navigation_home"

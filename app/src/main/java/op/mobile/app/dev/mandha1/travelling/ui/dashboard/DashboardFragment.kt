@@ -1,4 +1,4 @@
-package op.mobile.app.dev.bottom.navigation.ui.dashboard
+package op.mobile.app.dev.mandha1.travelling.ui.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
