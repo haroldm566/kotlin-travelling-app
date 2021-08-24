@@ -19,7 +19,11 @@
         android:id="@+id/navigation_splashscreen"
         android:name="op.mobile.app.dev.mandha1.travelling.ui.splashscreen.SplashScreenFragment"
         android:label="SplashScreen"
-        tools:layout="@layout/fragment_splash_screen" />
+        tools:layout="@layout/fragment_splash_screen">
+        <action
+            android:id="@+id/action_splash_screen_fragment_to_login_fragment"
+            app:destination="@id/navigation_login" />
+    </fragment>
 
 
     <fragment
