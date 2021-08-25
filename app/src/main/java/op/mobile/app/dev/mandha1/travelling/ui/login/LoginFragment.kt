@@ -27,8 +27,8 @@ class LoginFragment : Fragment() {
 
         // This is an example of an on click listener bound to a Button
         btnLogin.setOnClickListener {
-            if (emailAddressEdtTxt.text.toString() == "john.doe@email.com"
-                && passwordEdtTxt.text.toString() == "P@ssw0rd123"
+            if (emailAddressEdtTxt.text.toString() == "a@email.com"
+                && passwordEdtTxt.text.toString() == "a"
             ) {
                 // Get the action specified in mobile_navigation.xml
                 val action = LoginFragmentDirections

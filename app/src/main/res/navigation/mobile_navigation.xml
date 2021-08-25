@@ -5,6 +5,7 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_splashscreen">
 
+    <!-- LOGIN FRAGMENT -->
     <fragment
         android:id="@+id/navigation_login"
         android:name="op.mobile.app.dev.mandha1.travelling.ui.login.LoginFragment"
@@ -15,6 +16,28 @@
             app:destination="@id/navigation_home" />
     </fragment>
 
+    <!-- HOME FRAGMENT -->
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="op.mobile.app.dev.mandha1.travelling.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <!-- DASHBOARD FRAGMENT -->
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="op.mobile.app.dev.mandha1.travelling.ui.dashboard.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <!-- NOTIFICATIONS FRAGMENT -->
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="op.mobile.app.dev.mandha1.travelling.ui.notifications.NotificationsFragment"
+        android:label="Notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <!-- SPLASHSCREEN FRAGMENT -->
     <fragment
         android:id="@+id/navigation_splashscreen"
         android:name="op.mobile.app.dev.mandha1.travelling.ui.splashscreen.SplashScreenFragment"
@@ -25,23 +48,11 @@
             app:destination="@id/navigation_login" />
     </fragment>
 
-
+    <!-- POPULAR PHRASES FRAGMENT -->
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="op.mobile.app.dev.mandha1.travelling.ui.home.HomeFragment"
-        android:label="Home"
-        tools:layout="@layout/fragment_home" />
-
-    <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="op.mobile.app.dev.mandha1.travelling.ui.dashboard.DashboardFragment"
-        android:label="Dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="op.mobile.app.dev.mandha1.travelling.ui.notifications.NotificationsFragment"
-        android:label="Notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_popularphrases"
+        android:name="op.mobile.app.dev.mandha1.travelling.ui.popularphrases.PopularPhrasesFragment"
+        android:label="PopularPhrases"
+        tools:layout="@layout/fragment_popularphrases" />
 
 </navigation>
