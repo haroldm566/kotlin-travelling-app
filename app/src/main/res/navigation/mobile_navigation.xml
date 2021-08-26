@@ -55,4 +55,18 @@
         android:label="PopularPhrases"
         tools:layout="@layout/fragment_popularphrases" />
 
+    <!-- TEXT TRANSLATION FRAGMENT -->
+    <fragment
+        android:id="@+id/navigation_texttranslation"
+        android:name="op.mobile.app.dev.mandha1.travelling.ui.texttranslation.TextTranslationFragment"
+        android:label="TextTranslation"
+        tools:layout="@layout/fragment_text_translation" />
+
+    <!-- QUIZ QUESTION FRAGMENT -->
+    <fragment
+        android:id="@+id/navigation_quizquestion"
+        android:name="op.mobile.app.dev.mandha1.travelling.ui.quizquestion.QuizQuestionFragment"
+        android:label="QuizQuestion"
+        tools:layout="@layout/fragment_quiz_question" />
+
 </navigation>
