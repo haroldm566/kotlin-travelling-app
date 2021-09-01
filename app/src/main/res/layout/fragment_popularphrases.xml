@@ -25,7 +25,7 @@
         android:layout_marginStart="77dp"
         android:layout_marginTop="75dp"
         android:layout_marginEnd="78dp"
-        android:text="Below are some popular phrases you can use when you go to <country>"
+        android:text="Below are some popular phrases you can use when you go to"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -11,4 +11,13 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="connection_error">Connection Error :(</string>
+    <string name="loading">Loading…</string>
+    <string name="country_quiz">%1$s Quiz</string>
+    <string name="submit">Submit</string>
+    <string name="correct">Correct</string>
+    <string name="incorrect">Incorrect. %1$s was the correct answer</string>
+    <string name="please_select_an_answer">Please select an answer</string>
+    <string name="score">Score: %1$s</string>
 </resources>

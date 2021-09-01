@@ -69,4 +69,29 @@
         android:label="QuizQuestion"
         tools:layout="@layout/fragment_quiz_question" />
 
+
+
+    <fragment
+        android:id="@+id/navigation_quiz"
+        android:name="op.mobile.app.dev.mandha1.travelling.ui.quiz.QuizFragment"
+        android:label="Quiz"
+        tools:layout="@layout/fragment_quiz">
+        <argument
+            android:name="country"
+            app:argType="op.mobile.app.dev.mandha1.travelling.model.Country" />
+        <action
+            android:id="@+id/action_quiz_fragment_to_quiz_results_fragment"
+            app:destination="@id/navigation_quiz_results" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_quiz_results"
+        android:name="op.mobile.app.dev.mandha1.travelling.ui.quiz.results.QuizResultsFragment"
+        android:label="Results"
+        tools:layout="@layout/fragment_quiz_results">
+        <argument
+            android:name="score"
+            app:argType="integer" />
+    </fragment>
+
 </navigation>
