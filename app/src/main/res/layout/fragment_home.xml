@@ -1,61 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    tools:context=".ui.home.HomeFragment">
 
-    <LinearLayout
+    <data>
+
+        <variable
+            name="homeViewModel"
+            type="op.mobile.app.dev.mandha1.travelling.ui.home.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/tv_count"
-            android:layout_width="match_parent"
+            android:id="@+id/tv_status"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="262dp" />
-
-        <TextView
-            android:id="@+id/tv_home"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:text="Home"
-            android:textAlignment="center"
-            android:textSize="24sp"
+            android:layout_marginStart="@dimen/margin_32"
+            android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_32"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:service_status="@{homeViewModel.status}" />
 
-        <Button
-            android:id="@+id/btn_plus_one"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_countries"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="plus one"
-            tools:layout_editor_absoluteX="162dp"
-            tools:layout_editor_absoluteY="404dp" />
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:layout_marginBottom="@dimen/margin_16"
+            app:country_list_data="@{homeViewModel.response}"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/recycler_view_country_item" />
 
-        <Button
-            android:id="@+id/btn_reset"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Reset"
-            tools:layout_editor_absoluteX="161dp"
-            tools:layout_editor_absoluteY="466dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
+</layout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent">-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv_count"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textSize="24sp"-->
+<!--            tools:layout_editor_absoluteX="0dp"-->
+<!--            tools:layout_editor_absoluteY="262dp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv_home"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="32dp"-->
+<!--            android:layout_marginEnd="32dp"-->
+<!--            android:text="Home"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textSize="24sp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_plus_one"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="plus one"-->
+<!--            tools:layout_editor_absoluteX="162dp"-->
+<!--            tools:layout_editor_absoluteY="404dp" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_reset"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Reset"-->
+<!--            tools:layout_editor_absoluteX="161dp"-->
+<!--            tools:layout_editor_absoluteY="466dp" />-->
+
+<!--    </LinearLayout>-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->

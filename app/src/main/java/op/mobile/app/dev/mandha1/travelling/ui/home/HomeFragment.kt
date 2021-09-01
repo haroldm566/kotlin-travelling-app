@@ -10,13 +10,14 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import op.mobile.app.dev.mandha1.travelling.R
 import op.mobile.app.dev.mandha1.travelling.databinding.FragmentHomeBinding
 import op.mobile.app.dev.mandha1.travelling.helpers.IOnClickListener
 import op.mobile.app.dev.mandha1.travelling.helpers.recyclerview.CountryRVAdapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import op.mobile.app.dev.mandha1.travelling.R
+
 
 class HomeFragment : Fragment(), IOnClickListener {
     private lateinit var binding: FragmentHomeBinding
