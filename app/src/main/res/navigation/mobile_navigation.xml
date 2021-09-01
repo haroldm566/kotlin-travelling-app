@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_splashscreen">
+
+    <!-- LOGIN FRAGMENT -->
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="op.mobile.app.dev.mandha1.travelling.ui.login.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_fragment_to_home_fragment"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+    <!-- HOME FRAGMENT -->
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="op.mobile.app.dev.mandha1.travelling.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <!-- DASHBOARD FRAGMENT -->
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="op.mobile.app.dev.mandha1.travelling.ui.dashboard.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <!-- NOTIFICATIONS FRAGMENT -->
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="op.mobile.app.dev.mandha1.travelling.ui.notifications.NotificationsFragment"
+        android:label="Notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <!-- SPLASHSCREEN FRAGMENT -->
+    <fragment
+        android:id="@+id/navigation_splashscreen"
+        android:name="op.mobile.app.dev.mandha1.travelling.ui.splashscreen.SplashScreenFragment"
+        android:label="SplashScreen"
+        tools:layout="@layout/fragment_splash_screen">
+        <action
+            android:id="@+id/action_splash_screen_fragment_to_login_fragment"
+            app:destination="@id/navigation_login" />
+    </fragment>
+
+    <!-- POPULAR PHRASES FRAGMENT -->
+    <fragment
+        android:id="@+id/navigation_popularphrases"
+        android:name="op.mobile.app.dev.mandha1.travelling.ui.popularphrases.PopularPhrasesFragment"
+        android:label="PopularPhrases"
+        tools:layout="@layout/fragment_popularphrases" />
+
+    <!-- TEXT TRANSLATION FRAGMENT -->
+    <fragment
+        android:id="@+id/navigation_texttranslation"
+        android:name="op.mobile.app.dev.mandha1.travelling.ui.texttranslation.TextTranslationFragment"
+        android:label="TextTranslation"
+        tools:layout="@layout/fragment_text_translation" />
+
+    <!-- QUIZ QUESTION FRAGMENT -->
+    <fragment
+        android:id="@+id/navigation_quizquestion"
+        android:name="op.mobile.app.dev.mandha1.travelling.ui.quizquestion.QuizQuestionFragment"
+        android:label="QuizQuestion"
+        tools:layout="@layout/fragment_quiz_question" />
+
+</navigation>
