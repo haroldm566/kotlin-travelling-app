@@ -9,7 +9,13 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import op.mobile.app.dev.mandha1.travelling.R
+import op.mobile.app.dev.mandha1.travelling.databinding.FragmentLoginBinding
+import op.mobile.app.dev.mandha1.travelling.login.LoginAdapter
+import op.mobile.app.dev.mandha1.travelling.login.LoginApplication
+import op.mobile.app.dev.mandha1.travelling.model.Login
 
 class LoginFragment : Fragment() {
     override fun onCreateView(
