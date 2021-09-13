@@ -23,37 +23,61 @@ class LoginFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View {
-        //return inflater.inflate(R.layout.fragment_login, container, false)
+//        //return inflater.inflate(R.layout.fragment_login, container, false)
+//
+//        val view = inflater.inflate(R.layout.fragment_login, container, false)
+//
+//        val btnLogin: Button = view.findViewById(R.id.btn_login)
+//        val emailAddressEdtTxt: EditText = view.findViewById(R.id.et_email_address)
+//        val passwordEdtTxt: EditText = view.findViewById(R.id.et_password)
+//
+//        // This is an example of an on click listener bound to a Button
+//        btnLogin.setOnClickListener {
+//            if (emailAddressEdtTxt.text.toString() == "a@email.com"
+//                && passwordEdtTxt.text.toString() == "a"
+//            ) {
+//                // Get the action specified in mobile_navigation.xml
+//                val action = LoginFragmentDirections
+//                    .actionLoginFragmentToHomeFragment()
+//                // Navigate from the login screen to the home screen
+//                view?.findNavController()?.navigate(action)
+//            } else {
+//                Toast.makeText(
+//                    // Get the host activity - MainActivity
+//                    activity,
+//                    // The text you want to display
+//                    "Incorrect email address and/or password. Please try again",
+//                    // The time you want the toast to appear for
+//                    Toast.LENGTH_LONG // Toast.LENGTH_SHORT
+//                    // Remember to call the show() function
+//                ).show()
+//            }
+//        }
 
-        val view = inflater.inflate(R.layout.fragment_login, container, false)
+        val binding: FragmentLoginBinding = DataBindingUtil.inflate(
+            inflater, R.layout.fragment_login, container, false
+        )
 
-        val btnLogin: Button = view.findViewById(R.id.btn_login)
-        val emailAddressEdtTxt: EditText = view.findViewById(R.id.et_email_address)
-        val passwordEdtTxt: EditText = view.findViewById(R.id.et_password)
+        val viewModelFactory =
+            LoginViewModelFactory((activity?.applicationContext as LoginApplication).repository)
+        val viewModel = ViewModelProvider(this, viewModelFactory).get(LoginViewModel::class.java)
 
-        // This is an example of an on click listener bound to a Button
-        btnLogin.setOnClickListener {
-            if (emailAddressEdtTxt.text.toString() == "a@email.com"
-                && passwordEdtTxt.text.toString() == "a"
-            ) {
-                // Get the action specified in mobile_navigation.xml
-                val action = LoginFragmentDirections
-                    .actionLoginFragmentToHomeFragment()
-                // Navigate from the login screen to the home screen
-                view?.findNavController()?.navigate(action)
-            } else {
-                Toast.makeText(
-                    // Get the host activity - MainActivity
-                    activity,
-                    // The text you want to display
-                    "Incorrect email address and/or password. Please try again",
-                    // The time you want the toast to appear for
-                    Toast.LENGTH_LONG // Toast.LENGTH_SHORT
-                    // Remember to call the show() function
-                ).show()
+        binding.lifecycleOwner = viewLifecycleOwner
+
+        binding.loginViewModel = viewModel
+
+        binding.rvLoginDetails.adapter = LoginAdapter()
+
+        binding.btnLogin.setOnClickListener {
+            val username = binding.etUsername.text.toString().trim()
+            val password = binding.etPassword.text.toString().trim()
+            when {
+                username.isEmpty() -> binding.etUsername.error = "Please enter a username"
+                password.isEmpty() -> binding.etPassword.error = "Please enter a password"
+                else -> viewModel.insertLoginDetail(Login(username, password))
             }
         }
 
-        return view
+        return binding.root
     }
 }

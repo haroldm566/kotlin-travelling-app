@@ -20,4 +20,10 @@
     <string name="incorrect">Incorrect. %1$s was the correct answer</string>
     <string name="please_select_an_answer">Please select an answer</string>
     <string name="score">Score: %1$s</string>
+
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="login_details">Login Details</string>
+    <string name="delete_login_details">Delete Login Details</string>
 </resources>
