@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "464974042463",
+    "project_id": "mandha1-travelling",
+    "storage_bucket": "mandha1-travelling.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464974042463:android:794c53d2dac5c43c02d2ea",
+        "android_client_info": {
+          "package_name": "op.mobile.app.dev.mandha1.travelling"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "464974042463-vtrceoc405veq26nr40jcdrlvjbr30p3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHBJGpdrFY-nB-2Au9OsAkJs1hik02x3M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "464974042463-vtrceoc405veq26nr40jcdrlvjbr30p3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
