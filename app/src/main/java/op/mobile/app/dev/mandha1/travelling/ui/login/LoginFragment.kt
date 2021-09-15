@@ -1,24 +1,27 @@
 package op.mobile.app.dev.mandha1.travelling.ui.login
 
 import android.content.Intent
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.os.*
 import android.view.*
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
+
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+
 import op.mobile.app.dev.mandha1.travelling.R
 import op.mobile.app.dev.mandha1.travelling.databinding.FragmentLoginBinding
 import op.mobile.app.dev.mandha1.travelling.login.LoginAdapter
@@ -36,6 +39,24 @@ class LoginFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View {
 
+        val view = inflater.inflate(R.layout.fragment_login, container, false)
+
+//        //return inflater.inflate(R.layout.fragment_login, container, false)
+
+        val binding: FragmentLoginBinding = DataBindingUtil.inflate(
+            inflater, R.layout.fragment_login, container, false
+        )
+
+        val viewModelFactory =
+            LoginViewModelFactory((activity?.applicationContext as LoginApplication).repository)
+        val viewModel = ViewModelProvider(this, viewModelFactory).get(LoginViewModel::class.java)
+
+        binding.lifecycleOwner = viewLifecycleOwner
+
+        binding.loginViewModel = viewModel
+
+        binding.rvLoginDetails.adapter = LoginAdapter()
+
         auth = FirebaseAuth.getInstance()
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -44,19 +65,29 @@ class LoginFragment : Fragment() {
             .build()
         googleSignInClient = GoogleSignIn.getClient(requireActivity(), gso)
 
-        //
-//        //return inflater.inflate(R.layout.fragment_login, container, false)
-//
-//        val view = inflater.inflate(R.layout.fragment_login, container, false)
-//
-//        val btnLogin: Button = view.findViewById(R.id.btn_login)
-//        val emailAddressEdtTxt: EditText = view.findViewById(R.id.et_email_address)
-//        val passwordEdtTxt: EditText = view.findViewById(R.id.et_password)
-//
-//        // This is an example of an on click listener bound to a Button
+        val emailAddressEdtTxt: EditText = view.findViewById(R.id.et_email_address)
+        val passwordEdtTxt: EditText = view.findViewById(R.id.et_password)
+        val btnLogin: Button = view.findViewById(R.id.btn_login)
+        val btnGoogleLogin: SignInButton = view.findViewById(R.id.btn_google_login)
+
+        binding.btnLogin.setOnClickListener {
+            val username = binding.etUsername
+            val password = binding.etPassword
+            when {
+                username.text.toString().trim().isEmpty() -> binding.etUsername.error = "Please enter a username"
+                password.text.toString().trim().isEmpty() -> binding.etPassword.error = "Please enter a password"
+                else -> {
+                    viewModel.insertLoginDetail(Login(username.text.toString().trim(),  password.text.toString().trim()))
+                    username.text.clear()
+                    password.text.clear()
+                }
+            }
+        }
+
+        // This is an example of an on click listener bound to a Button
 //        btnLogin.setOnClickListener {
-//            if (emailAddressEdtTxt.text.toString() == "a@email.com"
-//                && passwordEdtTxt.text.toString() == "a"
+//            if (emailAddressEdtTxt.text.toString() == ""
+//                && passwordEdtTxt.text.toString() == ""
 //            ) {
 //                // Get the action specified in mobile_navigation.xml
 //                val action = LoginFragmentDirections
@@ -76,40 +107,12 @@ class LoginFragment : Fragment() {
 //            }
 //        }
 
-        val btnGoogleLogin: SignInButton = view.findViewById(R.id.btn_google_login)
-
-        val binding: FragmentLoginBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_login, container, false
-        )
-
-        val viewModelFactory =
-            LoginViewModelFactory((activity?.applicationContext as LoginApplication).repository)
-        val viewModel = ViewModelProvider(this, viewModelFactory).get(LoginViewModel::class.java)
-
-        binding.lifecycleOwner = viewLifecycleOwner
-
-        binding.loginViewModel = viewModel
-
-        binding.rvLoginDetails.adapter = LoginAdapter()
-
-        binding.btnLogin.setOnClickListener {
-            val username = binding.etUsername.text.toString().trim()
-            val password = binding.etPassword.text.toString().trim()
-            when {
-                username.isEmpty() -> binding.etUsername.error = "Please enter a username"
-                password.isEmpty() -> binding.etPassword.error = "Please enter a password"
-                else -> viewModel.insertLoginDetail(Login(username, password))
-            }
-        }
-
         btnGoogleLogin.setOnClickListener {
             signIn()
         }
 
         return binding.root
     }
-
-
 
     // Prompt the user to sign in using their Google account's email
     private fun signIn() {
