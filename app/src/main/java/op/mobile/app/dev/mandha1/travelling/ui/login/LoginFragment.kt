@@ -57,6 +57,7 @@ class LoginFragment : Fragment() {
 
         binding.rvLoginDetails.adapter = LoginAdapter()
 
+        //  FIREBASE AUTH
         auth = FirebaseAuth.getInstance()
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -65,22 +66,18 @@ class LoginFragment : Fragment() {
             .build()
         googleSignInClient = GoogleSignIn.getClient(requireActivity(), gso)
 
-        val emailAddressEdtTxt: EditText = view.findViewById(R.id.et_email_address)
-        val passwordEdtTxt: EditText = view.findViewById(R.id.et_password)
-        val btnLogin: Button = view.findViewById(R.id.btn_login)
+        //val emailAddressEdtTxt: EditText = view.findViewById(R.id.et_email_address)
+        //val passwordEdtTxt: EditText = view.findViewById(R.id.et_password)
+        //val btnLogin: Button = view.findViewById(R.id.btn_login)
         val btnGoogleLogin: SignInButton = view.findViewById(R.id.btn_google_login)
 
         binding.btnLogin.setOnClickListener {
-            val username = binding.etUsername
-            val password = binding.etPassword
+            val username = binding.etUsername.text.toString().trim()
+            val password = binding.etPassword.text.toString().trim()
             when {
-                username.text.toString().trim().isEmpty() -> binding.etUsername.error = "Please enter a username"
-                password.text.toString().trim().isEmpty() -> binding.etPassword.error = "Please enter a password"
-                else -> {
-                    viewModel.insertLoginDetail(Login(username.text.toString().trim(),  password.text.toString().trim()))
-                    username.text.clear()
-                    password.text.clear()
-                }
+                username.isEmpty() -> binding.etUsername.error = "Please enter a username"
+                password.isEmpty() -> binding.etPassword.error = "Please enter a password"
+                else -> viewModel.insertLoginDetail(Login(username, password))
             }
         }
 
