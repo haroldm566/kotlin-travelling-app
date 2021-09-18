@@ -38,11 +38,6 @@ class LoginFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View {
-
-        val view = inflater.inflate(R.layout.fragment_login, container, false)
-
-//        //return inflater.inflate(R.layout.fragment_login, container, false)
-
         val binding: FragmentLoginBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_login, container, false
         )
@@ -69,7 +64,6 @@ class LoginFragment : Fragment() {
         //val emailAddressEdtTxt: EditText = view.findViewById(R.id.et_email_address)
         //val passwordEdtTxt: EditText = view.findViewById(R.id.et_password)
         //val btnLogin: Button = view.findViewById(R.id.btn_login)
-        val btnGoogleLogin: SignInButton = view.findViewById(R.id.btn_google_login)
 
         binding.btnLogin.setOnClickListener {
             val username = binding.etUsername.text.toString().trim()
@@ -104,7 +98,7 @@ class LoginFragment : Fragment() {
 //            }
 //        }
 
-        btnGoogleLogin.setOnClickListener {
+        binding.btnGoogleLogin.setOnClickListener {
             signIn()
         }
 
