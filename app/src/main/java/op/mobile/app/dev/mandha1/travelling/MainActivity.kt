@@ -13,17 +13,6 @@ import com.google.android.gms.common.util.CollectionUtils.setOf
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
-//
-//        val toolbar: Toolbar = findViewById(R.id.toolbar) // Find the View in activity_main.xml with the id toolbar
-//        setSupportActionBar(toolbar) // Set toolbar as the entire application's action bar
-//
-//        val btmNavView: BottomNavigationView = findViewById(R.id.btm_nav_view)
-//        val navHostFragment =
-//            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-//        val navController = navHostFragment.navController
-//        btmNavView.setupWithNavController(navController)
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -37,5 +26,13 @@ class MainActivity : AppCompatActivity() {
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
+
+        //val toolbar: Toolbar = findViewById(R.id.toolbar) // Find the View in activity_main.xml with the id toolbar
+        //setSupportActionBar(toolbar) // Set toolbar as the entire application's action bar
+
+        //  Allows the bottom navigation to work - going between home, dashboard and notifications fragments
+        val btmNavView: BottomNavigationView = findViewById(R.id.btm_nav_view)
+        btmNavView.setupWithNavController(navController)
+
     }
 }

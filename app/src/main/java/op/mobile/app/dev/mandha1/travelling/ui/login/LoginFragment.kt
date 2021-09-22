@@ -75,7 +75,6 @@ class LoginFragment : Fragment() {
         //val passwordEdtTxt: EditText = view.findViewById(R.id.et_password)
         //val btnLogin: Button = view.findViewById(R.id.btn_login)
 
-        //john.doe@email.com    john.doe
         binding.btnLogin.setOnClickListener {
             val username = binding.etUsername.text.toString().trim()    //  Replace with username / email address
             val password = binding.etPassword.text.toString().trim()
@@ -85,7 +84,8 @@ class LoginFragment : Fragment() {
                 else -> viewModel.insertLoginDetail(Login(username, password))
             }
 
-            //  Using firebase to log into the app
+            //  Using firebase to log into the app via email and password
+            //e: john.doe@email.com    p: john.doe
             auth.signInWithEmailAndPassword(username, password).addOnCompleteListener { task ->
                 if(task.isSuccessful) {
                     Toast.makeText(activity, "Successfully Logged In", Toast.LENGTH_LONG).show()
@@ -123,6 +123,7 @@ class LoginFragment : Fragment() {
 //            }
 //        }
 
+        //  Run the sign-in method for logging in via Google
         binding.btnGoogleLogin.setOnClickListener {
             signIn()
         }
