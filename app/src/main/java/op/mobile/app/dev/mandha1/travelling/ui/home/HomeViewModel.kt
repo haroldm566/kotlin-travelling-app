@@ -25,7 +25,9 @@ class HomeViewModel : ViewModel() {
 //        _count.value = 0
 //    }
     private val baseUrl =
-    "https://gist.github.com/mandha1/d697d348476cebcde2d2750712c3438e"
+    "https://gist.githubusercontent.com/Grayson-Orr/b2f2019abce415483d18e737a14cded2/"
+    //https://gist.github.com/mandha1/d697d348476cebcde2d2750712c3438e
+    //https://gist.githubusercontent.com/Grayson-Orr/b2f2019abce415483d18e737a14cded2/
 
 
     private val _status = MutableLiveData<ServiceStatus>()

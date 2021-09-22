@@ -18,6 +18,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.OnCompleteListener
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
@@ -32,6 +33,15 @@ class LoginFragment : Fragment() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
+
+    override fun onStart() {
+        super.onStart()
+        // Check if user is signed in (non-null) and update UI accordingly.
+        val currentUser = auth.currentUser
+        if(currentUser != null){
+            //reload();
+        }
+    }
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -65,13 +75,28 @@ class LoginFragment : Fragment() {
         //val passwordEdtTxt: EditText = view.findViewById(R.id.et_password)
         //val btnLogin: Button = view.findViewById(R.id.btn_login)
 
+        //john.doe@email.com    john.doe
         binding.btnLogin.setOnClickListener {
-            val username = binding.etUsername.text.toString().trim()
+            val username = binding.etUsername.text.toString().trim()    //  Replace with username / email address
             val password = binding.etPassword.text.toString().trim()
             when {
                 username.isEmpty() -> binding.etUsername.error = "Please enter a username"
                 password.isEmpty() -> binding.etPassword.error = "Please enter a password"
                 else -> viewModel.insertLoginDetail(Login(username, password))
+            }
+
+            //  Using firebase to log into the app
+            auth.signInWithEmailAndPassword(username, password).addOnCompleteListener { task ->
+                if(task.isSuccessful) {
+                    Toast.makeText(activity, "Successfully Logged In", Toast.LENGTH_LONG).show()
+
+                    val action = LoginFragmentDirections
+                        .actionLoginFragmentToHomeFragment()
+
+                    view?.findNavController()?.navigate(action)
+                }else {
+                    Toast.makeText(activity, "Login Failed", Toast.LENGTH_LONG).show()
+                }
             }
         }
 
