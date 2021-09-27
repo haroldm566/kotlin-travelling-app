@@ -9,11 +9,6 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 import java.io.IOException
 
-enum class UIMode {
-    LIGHT,
-    DARK
-}
-
 // We need a reference to the context, i.e., SettingsFragment. Note: you can use this class with an Activity
 class SettingsManager(context: Context) {
 

@@ -1,28 +1,22 @@
 package op.mobile.app.dev.mandha1.travelling.ui.login
 
 import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
-import android.os.*
-import android.view.*
-import android.widget.Button
-import android.widget.EditText
+import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
-
-import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-
+import androidx.navigation.findNavController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.tasks.OnCompleteListener
-
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-
 import op.mobile.app.dev.mandha1.travelling.R
 import op.mobile.app.dev.mandha1.travelling.databinding.FragmentLoginBinding
 import op.mobile.app.dev.mandha1.travelling.login.LoginAdapter
@@ -51,6 +45,10 @@ class LoginFragment : Fragment() {
         val binding: FragmentLoginBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_login, container, false
         )
+
+        // hide bottom nav if on login screen
+        val item: MenuItem = menu.findItem(R.id.mobile_navigation)
+
 
         val viewModelFactory =
             LoginViewModelFactory((activity?.applicationContext as LoginApplication).repository)

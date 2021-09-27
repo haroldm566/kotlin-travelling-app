@@ -73,8 +73,6 @@
         android:label="QuizQuestion"
         tools:layout="@layout/fragment_quiz_question" />
 
-
-
     <fragment
         android:id="@+id/navigation_quiz"
         android:name="op.mobile.app.dev.mandha1.travelling.ui.quiz.QuizFragment"
@@ -97,5 +95,13 @@
             android:name="score"
             app:argType="integer" />
     </fragment>
+
+    <!-- SETTINGS FRAGMENT -->
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="op.mobile.app.dev.mandha1.travelling.ui.settings.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" />
+
 
 </navigation>

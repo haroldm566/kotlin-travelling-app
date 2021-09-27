@@ -6,10 +6,15 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="Home" />
 
+<!--    <item-->
+<!--        android:id="@+id/navigation_dashboard"-->
+<!--        android:icon="@drawable/ic_dashboard_black_24dp"-->
+<!--        android:title="Dashboard" />-->
+
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_settings"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="Dashboard" />
+        android:title="Settings" />
 
     <item
         android:id="@+id/navigation_notifications"

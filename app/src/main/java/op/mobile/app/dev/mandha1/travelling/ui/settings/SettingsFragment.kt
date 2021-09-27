@@ -9,6 +9,7 @@ import androidx.appcompat.widget.SwitchCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.observe
 import kotlinx.coroutines.launch
 import op.mobile.app.dev.mandha1.travelling.R
 
