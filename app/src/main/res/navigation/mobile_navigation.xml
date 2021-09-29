@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_splashscreen">
+    app:startDestination="@+id/navigation_attractions">
+    <!-- Change app:startDestination to test different screens on launch -->
+    <!-- navigation_splashscreen is default -->
 
     <!-- LOGIN FRAGMENT -->
     <fragment
@@ -102,6 +104,12 @@
         android:name="op.mobile.app.dev.mandha1.travelling.ui.settings.SettingsFragment"
         android:label="Settings"
         tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/navigation_attractions"
+        android:name="op.mobile.app.dev.mandha1.travelling.ui.attractions.AttractionsFragment"
+        android:label="Attractions"
+        tools:layout="@layout/fragment_attractions" />
 
 
 </navigation>

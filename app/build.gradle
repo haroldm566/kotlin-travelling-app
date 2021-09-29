@@ -19,6 +19,14 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        def secretsProperties = new Properties()
+        if (rootProject.file("local.properties").exists()) {
+            rootProject.file("local.properties")?.withInputStream {
+                secretsProperties.load(it)
+            }
+        }
+        resValue "string", "google_maps_key", (secretsProperties["GOOGLE_MAPS_KEY"] ?: "AIzaSyBOm2SY3mY9Awm8qmxoIMWT236M3bGZB8k")
     }
 
     buildTypes {
@@ -65,5 +73,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:21.0.1' // Firebase authentication library. If we omit the version, it will be 27.1.0, not 21.01.1
     implementation 'com.google.android.gms:play-services-auth:19.0.0' // Google Play services library
     implementation 'androidx.datastore:datastore-preferences:1.0.0-alpha02' // Datastore
+
+    // Google maps
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.google.maps.android:android-maps-utils:0.5'
 
 }

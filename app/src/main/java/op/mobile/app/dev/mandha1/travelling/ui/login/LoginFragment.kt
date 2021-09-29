@@ -47,7 +47,7 @@ class LoginFragment : Fragment() {
         )
 
         // hide bottom nav if on login screen
-        val item: MenuItem = menu.findItem(R.id.mobile_navigation)
+        //val item: MenuItem = menu.findItem(R.id.mobile_navigation)
 
 
         val viewModelFactory =
