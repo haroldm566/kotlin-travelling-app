@@ -29,13 +29,13 @@ class LoginFragmentInstrumentedTest {
     fun initValidString() {
         // Initialising variables marked with the lateinit keyword
         emailAddressToBeTyped = "john.doe@email.com"
-        passwordToBeTyped = "P@ssw0rd123"
+        passwordToBeTyped = "john.doe"
     }
 
     @Test
     fun login() {
         // withId(R.id.et_email_address) is a ViewMatcher
-        onView(withId(R.id.et_email_address))
+        onView(withId(R.id.et_username))
             // typeText() is a ViewAction
             .perform(typeText(emailAddressToBeTyped), closeSoftKeyboard())
 

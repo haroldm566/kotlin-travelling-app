@@ -26,6 +26,4 @@
     <string name="login">Login</string>
     <string name="login_details">Login Details</string>
     <string name="delete_login_details">Delete Login Details</string>
-
-
 </resources>
