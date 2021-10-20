@@ -5,16 +5,29 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_h"
+            android:id="@+id/navigation_register"
+            android:title="Register" />
 
+        <item
+            android:id="@+id/navigation_home"
             android:title="Home" />
-        <item
-            android:id="@+id/nav_g"
 
-            android:title="s" />
         <item
-            android:id="@+id/nav_s"
+            android:id="@+id/navigation_dashboard"
+            android:title="Dashboard" />
 
-            android:title="s" />
+        <item
+            android:id="@+id/navigation_attractions"
+            android:title="Attractions" />
+
+<!--        <item-->
+<!--            android:id=""-->
+<!--            android:title="" />-->
+
+        <item
+            android:id="@+id/navigation_texttranslation"
+            android:title="Translator" />
+
+
     </group>
 </menu>
