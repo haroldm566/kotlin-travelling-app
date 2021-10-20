@@ -17,6 +17,10 @@
             android:title="Dashboard" />
 
         <item
+            android:id="@+id/navigation_settings"
+            android:title="Settings" />
+
+        <item
             android:id="@+id/navigation_attractions"
             android:title="Attractions" />
 

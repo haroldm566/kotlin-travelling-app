@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import op.mobile.app.dev.mandha1.travelling.ui.quiz.QuizViewModelFactory
 import op.mobile.app.dev.mandha1.travelling.R
 import op.mobile.app.dev.mandha1.travelling.databinding.FragmentQuizBinding
 
@@ -83,14 +82,14 @@ class QuizFragment : Fragment() {
                     var answerIdx = 0
 
                     /**
-                      For example:
+                    For example:
 
-                      "answers": [
-                        "Secret ballots", Correct answer
-                        "Write-in nominations", Incorrect answer
-                        "Recounting of votes", Incorrect answer
-                        "All of the above" Incorrect answer
-                      ],
+                    "answers": [
+                    "Secret ballots", Correct answer
+                    "Write-in nominations", Incorrect answer
+                    "Recounting of votes", Incorrect answer
+                    "All of the above" Incorrect answer
+                    ],
                      */
 
                     /**
@@ -114,6 +113,7 @@ class QuizFragment : Fragment() {
                          * - Add to the score
                          * - Display a message for a correct answer
                          */
+                        //Toast.makeText(this, "blah", Toast.LENGTH_LONG).show()
                     } else {
                         /**
                          * Self-directed learning:

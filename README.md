@@ -17,3 +17,5 @@ Hopefully what the final application will closely resemble in terms of UI and fe
 ## GitHub Gist Link
 
 https://gist.github.com/mandha1/d697d348476cebcde2d2750712c3438e
+
+## Localized Page

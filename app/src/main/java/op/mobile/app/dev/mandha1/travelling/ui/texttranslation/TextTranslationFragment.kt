@@ -1,5 +1,7 @@
 package op.mobile.app.dev.mandha1.travelling.ui.texttranslation
 
+import android.content.pm.ApplicationInfo
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

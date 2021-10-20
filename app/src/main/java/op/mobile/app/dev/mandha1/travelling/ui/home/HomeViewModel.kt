@@ -10,20 +10,7 @@ import op.mobile.app.dev.mandha1.travelling.api.ServiceStatus
 import op.mobile.app.dev.mandha1.travelling.model.Country
 
 class HomeViewModel : ViewModel() {
-//    private val _count = MutableLiveData<Int>()
-//    val count: LiveData<Int> get() = _count
-//
-//    init {
-//        reset()
-//    }
-//
-//    fun plusOne() {
-//        _count.value = _count.value?.plus(1)
-//    }
-//
-//    fun reset() {
-//        _count.value = 0
-//    }
+
     private val baseUrl =
     "https://gist.githubusercontent.com/Grayson-Orr/b2f2019abce415483d18e737a14cded2/"
     //https://gist.github.com/mandha1/d697d348476cebcde2d2750712c3438e

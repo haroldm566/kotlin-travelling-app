@@ -1,7 +1,10 @@
 package op.mobile.app.dev.mandha1.travelling
 
+import android.content.pm.ApplicationInfo
+import android.content.pm.PackageManager
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
@@ -10,7 +13,6 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.google.android.gms.common.util.CollectionUtils.setOf
 import com.google.android.material.navigation.NavigationView
 
 
@@ -31,6 +33,15 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        //  Testing that the API key is being shown successfully
+        //  from the local.properties file
+        // Add YANDEX_API_KEY=<KEY> to local.properties first
+        val ai: ApplicationInfo = applicationContext.packageManager
+            .getApplicationInfo(applicationContext.packageName, PackageManager.GET_META_DATA)
+        val value = ai.metaData["keyValue"]
+        val key = value.toString()
+        Log.d("APIKEY", key)
     }
 
     override fun onSupportNavigateUp(): Boolean {
