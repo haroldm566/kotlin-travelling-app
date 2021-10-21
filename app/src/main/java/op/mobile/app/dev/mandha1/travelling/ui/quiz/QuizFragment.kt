@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import op.mobile.app.dev.mandha1.travelling.MainActivity
 import op.mobile.app.dev.mandha1.travelling.R
 import op.mobile.app.dev.mandha1.travelling.databinding.FragmentQuizBinding
 
@@ -113,7 +114,10 @@ class QuizFragment : Fragment() {
                          * - Add to the score
                          * - Display a message for a correct answer
                          */
-                        //Toast.makeText(this, "blah", Toast.LENGTH_LONG).show()
+
+                        viewModel.addScore()
+                        Toast.makeText(this, "sad", Toast.LENGTH_LONG)
+
                     } else {
                         /**
                          * Self-directed learning:

@@ -79,12 +79,7 @@
         android:label="TextTranslation"
         tools:layout="@layout/fragment_text_translation" />
 
-    <!-- QUIZ QUESTION FRAGMENT -->
-    <fragment
-        android:id="@+id/navigation_quizquestion"
-        android:name="op.mobile.app.dev.mandha1.travelling.ui.quizquestion.QuizQuestionFragment"
-        android:label="QuizQuestion"
-        tools:layout="@layout/fragment_quiz_question" />
+    <!-- QUIZ FRAGMENT -->
 
     <fragment
         android:id="@+id/navigation_quiz"
