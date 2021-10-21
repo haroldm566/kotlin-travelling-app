@@ -114,9 +114,7 @@ class QuizFragment : Fragment() {
                          * - Add to the score
                          * - Display a message for a correct answer
                          */
-
                         viewModel.addScore()
-                        Toast.makeText(this, "sad", Toast.LENGTH_LONG)
 
                     } else {
                         /**

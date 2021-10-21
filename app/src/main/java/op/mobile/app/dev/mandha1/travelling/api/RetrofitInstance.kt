@@ -14,4 +14,8 @@ class RetrofitInstance(private val url: String) {
     val retrofitCountryService: ICountry by lazy {
         retrofit.create(ICountry::class.java)
     }
+
+    val retrofitTranslateService: ITranslate by lazy {
+        retrofit.create(ITranslate::class.java)
+    }
 }
