@@ -1,13 +1,10 @@
 package op.mobile.app.dev.mandha1.travelling.ui.texttranslation
 
-import android.content.pm.ApplicationInfo
-import android.content.pm.PackageManager
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import op.mobile.app.dev.mandha1.travelling.api.ITranslate
 import op.mobile.app.dev.mandha1.travelling.api.RetrofitInstance
 import op.mobile.app.dev.mandha1.travelling.api.ServiceStatus
 import op.mobile.app.dev.mandha1.travelling.model.Translate
@@ -17,8 +14,8 @@ class TextTranslationViewModel : ViewModel() {
     //test
     private val localProperties = Properties()
 
-    private val baseUrl =
-        "https://translate.yandex.net/api/v1.5/tr.json/translate/" + localProperties.getProperty("YANDEX_API_KEY")
+    //private val baseUrl = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=" + localProperties.getProperty("YANDEX_API_KEY")
+    private val baseUrl = "https://translate.yandex.net/api/v1.5/tr.json/getLangs?key=trnsl.1.1.20200329T025311Z.37f6897b8a99dbd9.bb42d876c007fde0812c365015625fde8c0f0163"
 
     private val _status = MutableLiveData<ServiceStatus>()
     val status: LiveData<ServiceStatus> get() = _status

@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import op.mobile.app.dev.mandha1.travelling.MainActivity
 import op.mobile.app.dev.mandha1.travelling.R
 import op.mobile.app.dev.mandha1.travelling.databinding.FragmentQuizBinding
 
@@ -115,6 +114,7 @@ class QuizFragment : Fragment() {
                          * - Display a message for a correct answer
                          */
                         viewModel.addScore()
+                        Toast.makeText(activity, "Correct answer!", Toast.LENGTH_LONG).show()
 
                     } else {
                         /**
@@ -122,6 +122,7 @@ class QuizFragment : Fragment() {
                          *
                          * Display a message for an incorrect answer
                          */
+                        Toast.makeText(activity, "Wrong answer...", Toast.LENGTH_LONG).show()
                     }
 
                     viewModel.addQuestionIdx()
@@ -146,6 +147,7 @@ class QuizFragment : Fragment() {
                      *
                      * Display a message if a RadioButton is not clicked
                      */
+                    Toast.makeText(activity, "Please select an answer.", Toast.LENGTH_LONG).show()
                 }
             }
 

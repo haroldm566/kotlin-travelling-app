@@ -1,6 +1,7 @@
 package op.mobile.app.dev.mandha1.travelling.ui.texttranslation
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,6 +33,8 @@ class TextTranslationFragment : Fragment(){
         binding.lifecycleOwner = viewLifecycleOwner
 
         binding.textTranslationViewModel = viewModel
+
+        Log.d("TESTRESPONSE", viewModel.response.toString())
 
         return binding.root
     }

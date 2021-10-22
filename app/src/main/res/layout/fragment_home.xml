@@ -5,7 +5,6 @@
     tools:context=".ui.home.HomeFragment">
 
     <data>
-
         <variable
             name="homeViewModel"
             type="op.mobile.app.dev.mandha1.travelling.ui.home.HomeViewModel" />

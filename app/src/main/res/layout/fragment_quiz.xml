@@ -5,7 +5,6 @@
     tools:context=".ui.quiz.QuizFragment">
 
     <data>
-
         <variable
             name="quizViewModel"
             type="op.mobile.app.dev.mandha1.travelling.ui.quiz.QuizViewModel" />

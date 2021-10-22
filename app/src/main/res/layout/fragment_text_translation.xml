@@ -73,7 +73,22 @@
             android:layout_marginStart="145dp"
             android:layout_marginTop="87dp"
             android:layout_marginEnd="146dp"
-            android:text="Translate"
+            android:text="das"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+
+        <!-- Test text view for get request -->
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="176dp"
+            android:layout_marginTop="37dp"
+            android:layout_marginEnd="177dp"
+            android:layout_marginBottom="31dp"
+            android:text="@{textTranslationViewModel.response.size()}"
+            app:layout_constraintBottom_toTopOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />

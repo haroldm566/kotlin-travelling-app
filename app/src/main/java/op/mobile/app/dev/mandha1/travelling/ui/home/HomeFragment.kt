@@ -17,6 +17,7 @@ import op.mobile.app.dev.mandha1.travelling.helpers.recyclerview.CountryRVAdapte
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import op.mobile.app.dev.mandha1.travelling.ui.countrypage.CountryPageFragmentDirections
 
 
 class HomeFragment : Fragment(), IOnClickListener {
@@ -61,8 +62,10 @@ class HomeFragment : Fragment(), IOnClickListener {
      */
     override fun onItemClick(position: Int) {
         val item = binding.homeViewModel!!.response.value!![position]
+//        val action =
+//            HomeFragmentDirections.actionHomeFragmentToQuizFragment(item)
         val action =
-            HomeFragmentDirections.actionHomeFragmentToQuizFragment(item)
+            HomeFragmentDirections.actionHomeFragmentToCountrypageFragment(item)
         findNavController().navigate(action)
     }
 }
