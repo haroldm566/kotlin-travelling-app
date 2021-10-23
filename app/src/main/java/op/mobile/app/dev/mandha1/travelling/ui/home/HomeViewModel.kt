@@ -17,7 +17,6 @@ class HomeViewModel : ViewModel() {
     //https://gist.github.com/mandha1/d697d348476cebcde2d2750712c3438e
     //https://gist.githubusercontent.com/Grayson-Orr/b2f2019abce415483d18e737a14cded2/
 
-
     private val _status = MutableLiveData<ServiceStatus>()
     val status: LiveData<ServiceStatus> get() = _status
 

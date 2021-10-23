@@ -5,7 +5,7 @@ import kotlinx.parcelize.Parcelize
 import kotlinx.parcelize.RawValue
 
 data class Translate(
-    //val text: String,
-    //val lang: String
-    val dirs: List<String>
+    val key: String,
+    val text: String,
+    val lang: String
 )

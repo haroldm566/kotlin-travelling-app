@@ -1,24 +1,18 @@
 package op.mobile.app.dev.mandha1.travelling.ui.texttranslation
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import op.mobile.app.dev.mandha1.travelling.R
-import op.mobile.app.dev.mandha1.travelling.ui.home.HomeFragmentDirections
-import op.mobile.app.dev.mandha1.travelling.ui.texttranslation.TextTranslationViewModel
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import op.mobile.app.dev.mandha1.travelling.R
 import op.mobile.app.dev.mandha1.travelling.databinding.FragmentTextTranslationBinding
-import op.mobile.app.dev.mandha1.travelling.helpers.recyclerview.CountryRVAdapter
-import op.mobile.app.dev.mandha1.travelling.ui.home.HomeViewModel
 
-class TextTranslationFragment : Fragment(){
+class TextTranslationFragment : Fragment() {
 
-    //private val TAG = "MainActivity"
+    private lateinit var viewModel: TextTranslationViewModel
     private lateinit var binding: FragmentTextTranslationBinding
 
     override fun onCreateView(
@@ -31,21 +25,22 @@ class TextTranslationFragment : Fragment(){
             inflater, R.layout.fragment_text_translation, container, false
         )
 
-        val viewModel: TextTranslationViewModel by viewModels()
+        val viewModelFactory =
+            TextTranslationViewModelFactory(
+                TextTranslationFragmentArgs.fromBundle(requireArguments()).country
+            )
 
-        Log.d("TESTRESPONSE", viewModel.response.value.toString())
+        viewModel = ViewModelProvider(
+            this,
+            viewModelFactory
+        ).get(TextTranslationViewModel::class.java)
 
         binding.apply {
             lifecycleOwner = viewLifecycleOwner
             textTranslationViewModel = viewModel
+            // translate things
+            // non functional need something here
             return root
         }
-
-//        val viewModel = ViewModelProvider(this).get(TextTranslationViewModel::class.java)
-//        binding.lifecycleOwner = viewLifecycleOwner
-//        binding.textTranslationViewModel = viewModel
-
-
-//        return binding.root
     }
 }
