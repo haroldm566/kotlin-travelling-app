@@ -8,6 +8,7 @@ import kotlinx.coroutines.launch
 import op.mobile.app.dev.mandha1.travelling.api.RetrofitInstance
 import op.mobile.app.dev.mandha1.travelling.api.ServiceStatus
 import op.mobile.app.dev.mandha1.travelling.model.Translate
+import retrofit2.Call
 import java.util.*
 
 class TextTranslationViewModel : ViewModel() {
@@ -20,14 +21,14 @@ class TextTranslationViewModel : ViewModel() {
     private val _status = MutableLiveData<ServiceStatus>()
     val status: LiveData<ServiceStatus> get() = _status
 
-    private val _response = MutableLiveData<List<Translate>>()
-    val response: LiveData<List<Translate>> get() = _response
+    private val _response = MutableLiveData<Call<List<Translate>>>()
+    val response: LiveData<Call<List<Translate>>> get() = _response
 
     init {
         viewModelScope.launch {
             _status.value = ServiceStatus.LOADING
             try {
-                _response.value = RetrofitInstance(baseUrl).retrofitTranslateService.getResponse()
+                _response.value = RetrofitInstance(baseUrl).retrofitTranslateService.getLangs()
                 _status.value = ServiceStatus.COMPLETE
             } catch (e: Exception) {
                 _status.value = ServiceStatus.ERROR

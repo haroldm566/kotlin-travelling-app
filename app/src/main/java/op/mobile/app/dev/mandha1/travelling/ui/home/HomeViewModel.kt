@@ -12,7 +12,8 @@ import op.mobile.app.dev.mandha1.travelling.model.Country
 class HomeViewModel : ViewModel() {
 
     private val baseUrl =
-    "https://gist.githubusercontent.com/Grayson-Orr/b2f2019abce415483d18e737a14cded2/"
+        "https://gist.github.com/mandha1/d697d348476cebcde2d2750712c3438e"
+    //https://gist.github.com/Grayson-Orr/b2f2019abce415483d18e737a14cded2/
     //https://gist.github.com/mandha1/d697d348476cebcde2d2750712c3438e
     //https://gist.githubusercontent.com/Grayson-Orr/b2f2019abce415483d18e737a14cded2/
 

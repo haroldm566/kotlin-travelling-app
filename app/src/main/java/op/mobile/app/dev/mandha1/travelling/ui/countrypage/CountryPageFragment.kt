@@ -40,7 +40,7 @@ class CountryPageFragment : Fragment() {
             false
         )
 
-        val viewModel: HomeViewModel by viewModels()
+        val viewModel: CountryPageViewModel by viewModels()
 //        val viewModelFactory =
 //            CountryPageViewModelFactory(
 //                CountrypageFragmentArgs.fromBundle(requireArguments()).country
@@ -55,9 +55,7 @@ class CountryPageFragment : Fragment() {
             lifecycleOwner = viewLifecycleOwner
             countryPageViewModel = viewModel
 
-            homeViewModel = viewModel
-
-            rvCountries.adapter = CountryRVAdapter(this@CountryPageFragment)
+            //rvCountries.adapter = CountryRVAdapter(this@CountryPageFragment)
 
             return root
         }
@@ -65,8 +63,8 @@ class CountryPageFragment : Fragment() {
 
     private fun doQuiz(position: Int) {
         //val item = binding.countryPageViewModel!!.response.value!![position]
-        val item = binding.homeViewModel!!.response.value!![position]
-        val action = CountryPageFragmentDirections.actionCountrypageFragmentToQuizFragment(item)
-        findNavController().navigate(action)
+        //val item = binding.homeViewModel!!.response.value!![position]
+        //val action = CountryPageFragmentDirections.actionCountrypageFragmentToQuizFragment(item)
+        //findNavController().navigate(action)
     }
 }

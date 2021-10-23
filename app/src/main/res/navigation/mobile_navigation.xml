@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_texttranslation">
     <!-- Change app:startDestination to test different screens on launch -->
     <!-- navigation_splashscreen is default -->
 
@@ -40,9 +40,9 @@
             android:id="@+id/action_home_fragment_to_countrypage_fragment"
             app:destination="@id/navigation_countrypage" />
 
-<!--        <action-->
-<!--            android:id="@+id/action_home_fragment_to_quiz_fragment"-->
-<!--            app:destination="@id/navigation_quiz" />-->
+        <action
+            android:id="@+id/action_home_fragment_to_quiz_fragment"
+            app:destination="@id/navigation_quiz" />
     </fragment>
 
     <!-- COUNTRY PAGE FRAGMENT-->
