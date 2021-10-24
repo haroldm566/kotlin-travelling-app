@@ -9,9 +9,11 @@ import android.widget.ArrayAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import op.mobile.app.dev.mandha1.travelling.R
 import op.mobile.app.dev.mandha1.travelling.databinding.FragmentQuizResultsBinding
+import op.mobile.app.dev.mandha1.travelling.ui.countrypage.CountryPageFragmentDirections
 
 class QuizResultsFragment : Fragment() {
     override fun onCreateView(
@@ -34,9 +36,18 @@ class QuizResultsFragment : Fragment() {
 
         val viewModel: QuizResultsViewModel by viewModels { viewModelFactory }
 
+        val action = QuizResultsFragmentDirections
+            .actionQuizFragmentToHomeFragment()
+
         binding.apply {
             lifecycleOwner = viewLifecycleOwner
             quizResultsViewModel = viewModel
+
+            //  Button is invisible in the results fragment for some reason
+            btnBackToHome.setOnClickListener {
+                it.findNavController().navigate(action)
+            }
+
             return root
         }
     }

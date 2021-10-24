@@ -22,6 +22,7 @@ import op.mobile.app.dev.mandha1.travelling.databinding.FragmentLoginBinding
 import op.mobile.app.dev.mandha1.travelling.login.LoginAdapter
 import op.mobile.app.dev.mandha1.travelling.login.LoginApplication
 import op.mobile.app.dev.mandha1.travelling.model.Login
+import op.mobile.app.dev.mandha1.travelling.ui.countrypage.CountryPageFragmentDirections
 
 class LoginFragment : Fragment() {
 
@@ -98,32 +99,15 @@ class LoginFragment : Fragment() {
             }
         }
 
-        // This is an example of an on click listener bound to a Button
-//        btnLogin.setOnClickListener {
-//            if (emailAddressEdtTxt.text.toString() == ""
-//                && passwordEdtTxt.text.toString() == ""
-//            ) {
-//                // Get the action specified in mobile_navigation.xml
-//                val action = LoginFragmentDirections
-//                    .actionLoginFragmentToHomeFragment()
-//                // Navigate from the login screen to the home screen
-//                view?.findNavController()?.navigate(action)
-//            } else {
-//                Toast.makeText(
-//                    // Get the host activity - MainActivity
-//                    activity,
-//                    // The text you want to display
-//                    "Incorrect email address and/or password. Please try again",
-//                    // The time you want the toast to appear for
-//                    Toast.LENGTH_LONG // Toast.LENGTH_SHORT
-//                    // Remember to call the show() function
-//                ).show()
-//            }
-//        }
-
         //  Run the sign-in method for logging in via Google
         binding.btnGoogleLogin.setOnClickListener {
             signIn()
+        }
+
+        //  Send user to registration fragment
+        binding.btnRegister.setOnClickListener {
+            val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
+            it.findNavController().navigate(action)
         }
 
         return binding.root
