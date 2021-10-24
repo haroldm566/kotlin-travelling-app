@@ -47,6 +47,13 @@ class CountryPageFragment : Fragment() {
                 viewModel.country
             )
 
+        //  Directions to go to the popular phrases fragment,
+        //        passing country object to said fragment
+        val action3 = CountryPageFragmentDirections
+            .actionCountrypageFragmentToPopularphrasesFragment(
+                viewModel.country
+            )
+
         binding.apply {
             lifecycleOwner = viewLifecycleOwner
             countryPageViewModel = viewModel
@@ -61,6 +68,12 @@ class CountryPageFragment : Fragment() {
             //      when button is pressed
             btnTt.setOnClickListener {
                 it.findNavController().navigate(action2)
+            }
+
+            //  Go to the popular phrases fragment, passing country object to it
+            //      when button is pressed
+            btnPp.setOnClickListener {
+                it.findNavController().navigate(action3)
             }
 
             return root
