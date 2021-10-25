@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -12,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import op.mobile.app.dev.mandha1.travelling.R
 import op.mobile.app.dev.mandha1.travelling.databinding.FragmentQuizBinding
+
 
 class QuizFragment : Fragment() {
     private lateinit var viewModel: QuizViewModel
@@ -63,6 +65,12 @@ class QuizFragment : Fragment() {
          */
         viewModel.setQuestion()
         viewModel.startTimer()
+
+        /**
+         * This disables the back button. You can not go to the
+         * previous Fragment (not working)
+         */
+        activity?.onBackPressedDispatcher?.addCallback(this) {}
 
         binding.apply {
             lifecycleOwner = viewLifecycleOwner

@@ -35,7 +35,7 @@ tools:context=".ui.popularphrases.PopularPhrasesFragment">
             android:layout_marginStart="77dp"
             android:layout_marginTop="75dp"
             android:layout_marginEnd="78dp"
-            android:text="Below are some popular phrases you can use when you go to"
+            android:text="@{`Below are three popular phrases in: ` + popularPhrasesViewModel.country.name}"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,41 +45,43 @@ tools:context=".ui.popularphrases.PopularPhrasesFragment">
             android:id="@+id/pp_phrase1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="107dp"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="108dp"
             android:text="@{popularPhrasesViewModel.country.phrases[0]}"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/pp_phrase2"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pp_intro" />
+            app:layout_constraintTop_toBottomOf="@+id/pp_intro"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/pp_phrase2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="68dp"
-            android:layout_marginEnd="112dp"
-            android:text="phrase2"
+            android:layout_marginTop="132dp"
+            android:layout_marginBottom="100dp"
+            android:text="@{popularPhrasesViewModel.country.phrases[1]}"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/pp_phrase3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pp_intro" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pp_phrase1" />
 
         <TextView
             android:id="@+id/pp_phrase3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="107dp"
-            android:layout_marginTop="96dp"
-            android:text="phrase3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pp_phrase1" />
-
-        <TextView
-            android:id="@+id/pp_phrase4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="96dp"
-            android:layout_marginEnd="112dp"
-            android:text="phrase4"
+            android:layout_marginTop="115dp"
+            android:layout_marginBottom="204dp"
+            android:text="@{popularPhrasesViewModel.country.phrases[2]}"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pp_phrase2" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

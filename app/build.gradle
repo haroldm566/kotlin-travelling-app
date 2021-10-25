@@ -72,15 +72,22 @@ dependencies {
     implementation 'androidx.room:room-runtime:2.3.0'
     implementation 'androidx.room:room-ktx:2.3.0'
     kapt 'androidx.room:room-compiler:2.3.0'
-    implementation platform('com.google.firebase:firebase-bom:27.1.0') // Manages all Firebase library versions by specifying only one version
-    implementation 'com.google.firebase:firebase-auth:21.0.1' // Firebase authentication library. If we omit the version, it will be 27.1.0, not 21.01.1
-    implementation 'com.google.android.gms:play-services-auth:19.0.0' // Google Play services library
-    implementation 'androidx.datastore:datastore-preferences:1.0.0-alpha02' // Datastore
+
+    //  Firebase
+    implementation platform('com.google.firebase:firebase-bom:27.1.0')
+    implementation 'com.google.firebase:firebase-auth:21.0.1'
+
+    //  Google play services
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+
+    //  Datastore
+    implementation 'androidx.datastore:datastore-preferences:1.0.0-alpha02'
 
     // Google maps
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.google.maps.android:android-maps-utils:0.5'
 
+    //  Material design
     implementation "com.google.android.material:material:$version"
 }
