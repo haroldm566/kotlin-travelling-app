@@ -19,3 +19,5 @@ Hopefully what the final application will closely resemble in terms of UI and fe
 https://gist.github.com/mandha1/d697d348476cebcde2d2750712c3438e
 
 ## Localized Page
+
+countrypage

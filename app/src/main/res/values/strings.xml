@@ -26,4 +26,12 @@
     <string name="login">Login</string>
     <string name="login_details">Login Details</string>
     <string name="delete_login_details">Delete Login Details</string>
+
+    <!-- Country page strings for localization-->
+<!--    <string name=""></string>-->
+    <string name="country_name">%!$s</string>
+    <string name="pp_label">Popular Phrases</string>
+    <string name="q_label">Quiz</string>
+    <string name="attractions_label">Attractions</string>
+
 </resources>
