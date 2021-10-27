@@ -42,23 +42,16 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
 
-        //  Allows the bottom navigation to work - going between home, dashboard and notifications fragments
-//        val btmNavView: BottomNavigationView = findViewById(R.id.btm_nav_view)
-//        btmNavView.setupWithNavController(navController)
+        //  Allows the bottom navigation to work
+        val btmNavView: BottomNavigationView = findViewById(R.id.btm_nav_view)
+        btmNavView.setupWithNavController(navController)
 
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        //  Testing that the API key is being shown successfully
-        //  from the local.properties file
-        // Add YANDEX_API_KEY=<KEY> to local.properties first
-//        val ai: ApplicationInfo = applicationContext.packageManager
-//            .getApplicationInfo(applicationContext.packageName, PackageManager.GET_META_DATA)
-//        val value = ai.metaData["keyValue"]
-//        val key = value.toString()
-//        Log.d("APIKEY", key)
 
+        //  Saves the current theme - light/dark mode
         sharedPreferences = getSharedPreferences("SharedPrefs", MODE_PRIVATE);
         NightMode = sharedPreferences.getInt("NightModeInt", 1);
         AppCompatDelegate.setDefaultNightMode(NightMode);
@@ -71,7 +64,7 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-    //  Allows set theme to persist even when app's closed
+    //  Allows chosen theme to persist even when app's closed
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         NightMode = AppCompatDelegate.getDefaultNightMode()

@@ -6,6 +6,6 @@ import kotlinx.parcelize.RawValue
 
 data class Translate(
     val key: String,
-    val text: String,
+    val text: List<String>,
     val lang: String
 )

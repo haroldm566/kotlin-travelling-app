@@ -18,14 +18,22 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
-
     </application>
+
+    <!-- Required for TTS to work on SdkVersion 30+ as per TTS documentation -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+    </queries>
 
 </manifest>

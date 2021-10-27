@@ -24,74 +24,64 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="0dp" />
 
-        <Spinner
-            android:id="@+id/spinner2"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
             android:layout_width="409dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="51dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            tools:layout_editor_absoluteX="1dp" />
-
-        <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginEnd="101dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_translate"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner2" />
+            app:layout_constraintTop_toBottomOf="@+id/textView">
 
-        <Spinner
-            android:id="@+id/spinner3"
-            android:layout_width="409dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="66dp"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-            tools:layout_editor_absoluteX="1dp" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_tr_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:afterTextChanged="@{textTranslationViewModel::setToBeTranslatedText}"
+                android:hint="Enter text to be translated into target language"
+                android:inputType="text" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonName2"
-            android:layout_width="wrap_content"
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_translatedText"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginEnd="101dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner3" />
+            android:gravity="center"
+            android:text="@{textTranslationViewModel.response.text[0]}"
+            android:textSize="@dimen/text_size_18"
+            app:layout_constraintBottom_toTopOf="@+id/btn_translate"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+            tools:layout_editor_absoluteX="205dp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_translate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="145dp"
-            android:layout_marginTop="87dp"
             android:layout_marginEnd="146dp"
-            android:text="das"
+            android:onClick="@{() -> textTranslationViewModel.getTranslatedText(textTranslationViewModel.translateText)}"
+            android:text="@string/translate"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+            tools:layout_editor_absoluteY="412dp" />
 
-        <!-- Test text view for get request -->
-        <TextView
-            android:id="@+id/textView2"
+        <Button
+            android:id="@+id/btn_tts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="176dp"
-            android:layout_marginTop="37dp"
-            android:layout_marginEnd="177dp"
-            android:layout_marginBottom="31dp"
-            app:layout_constraintBottom_toTopOf="@+id/button"
+            android:layout_marginStart="145dp"
+            android:layout_marginTop="112dp"
+            android:layout_marginEnd="146dp"
+            android:onClick="@{() -> textTranslationViewModel.speak(textTranslationViewModel.response.text[0])}"
+            android:text="@string/tts"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.487"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
-            app:service_status="@{textTranslationViewModel.status}" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_translate" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -27,6 +27,8 @@
     <string name="login_details">Login Details</string>
     <string name="delete_login_details">Delete Login Details</string>
 
+    <string name="tts">Text To Speech</string>
+
     <!-- Country page strings for localization-->
 <!--    <string name=""></string>-->
     <string name="countrypage_label">%1$s Country Page</string>
