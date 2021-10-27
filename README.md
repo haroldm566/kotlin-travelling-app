@@ -20,4 +20,4 @@ https://gist.github.com/mandha1/d697d348476cebcde2d2750712c3438e
 
 ## Localized Page
 
-countrypage
+The country page (fragment shown after selecting a country) is localized in Japanese. Change system language to Japanese to test.

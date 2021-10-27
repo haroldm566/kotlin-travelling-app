@@ -29,9 +29,15 @@
 
     <!-- Country page strings for localization-->
 <!--    <string name=""></string>-->
-    <string name="country_name">%!$s</string>
+    <string name="countrypage_label">%1$s Country Page</string>
     <string name="pp_label">Popular Phrases</string>
-    <string name="q_label">Quiz</string>
-    <string name="attractions_label">Attractions</string>
+    <string name="qu_label">Quiz</string>
+    <string name="at_label">Attractions</string>
+    <string name="tr_label">Text Translation</string>
 
+    <string name="play">Play Quiz</string>
+    <string name="translate">Translate</string>
+
+    <string name="view_phrases">View Phrases</string>
+    <string name="view_attractions">View Attractions</string>
 </resources>

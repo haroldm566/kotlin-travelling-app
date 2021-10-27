@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- jp localization-->
+    <string name="countrypage_label">%1$s 国のページ</string>
+    <string name="pp_label">人気のフレーズ</string>
+    <string name="qu_label">クイズ</string>
+    <string name="at_label">アトラクション</string>
+    <string name="tr_label">テキスト翻訳</string>
+
+    <string name="play">クイズを再生する</string>
+    <string name="translate">翻訳</string>
+
+    <string name="view_phrases">フレーズを見る</string>
+    <string name="view_attractions">アトラクションを見る</string>
+</resources>
