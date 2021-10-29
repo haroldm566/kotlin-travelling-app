@@ -54,6 +54,11 @@ class CountryPageFragment : Fragment() {
                 viewModel.country
             )
 
+        val action4 = CountryPageFragmentDirections
+            .actionCountrypageFragmentToAttractionsFragment(
+                viewModel.country
+            )
+
         binding.apply {
             lifecycleOwner = viewLifecycleOwner
             countryPageViewModel = viewModel
@@ -74,6 +79,12 @@ class CountryPageFragment : Fragment() {
             //      when button is pressed
             btnPp.setOnClickListener {
                 it.findNavController().navigate(action3)
+            }
+
+            //  Go to the attractions fragment, passing country object to it
+            //      when button is pressed
+            btnAttractions.setOnClickListener {
+                it.findNavController().navigate(action4)
             }
 
             return root

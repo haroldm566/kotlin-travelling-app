@@ -23,13 +23,13 @@ import op.mobile.app.dev.mandha1.travelling.R
 import op.mobile.app.dev.mandha1.travelling.databinding.ClusterMarkerInfoWindowBinding
 import op.mobile.app.dev.mandha1.travelling.databinding.ClusterMarkerBinding
 
-class CompanyMarkerCluster(
+class AttractionMarkerCluster(
     context: Context,
     private val map: GoogleMap,
-    clusterManager: ClusterManager<Company>
+    clusterManager: ClusterManager<Attraction>
 ) :
-    DefaultClusterRenderer<Company>(context, map, clusterManager),
-    OnClusterClickListener<Company>,
+    DefaultClusterRenderer<Attraction>(context, map, clusterManager),
+    OnClusterClickListener<Attraction>,
     OnInfoWindowClickListener {
 
     private var layoutInflater: LayoutInflater = LayoutInflater.from(context)
@@ -55,12 +55,12 @@ class CompanyMarkerCluster(
         map.setOnMarkerClickListener(clusterManager)
     }
 
-    override fun onBeforeClusterItemRendered(item: Company, markerOptions: MarkerOptions) {
+    override fun onBeforeClusterItemRendered(item: Attraction, markerOptions: MarkerOptions) {
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
     }
 
     override fun onBeforeClusterRendered(
-        cluster: Cluster<Company>,
+        cluster: Cluster<Attraction>,
         markerOptions: MarkerOptions
     ) {
         binding.tvCluster.text = cluster.size.toString()
@@ -69,13 +69,13 @@ class CompanyMarkerCluster(
         markerOptions.icon(BitmapDescriptorFactory.fromBitmap(icon))
     }
 
-    override fun onClusterItemRendered(clusterItem: Company, marker: Marker) {
+    override fun onClusterItemRendered(clusterItem: Attraction, marker: Marker) {
         marker.tag = clusterItem
     }
 
-    override fun onClusterClick(cluster: Cluster<Company>): Boolean {
+    override fun onClusterClick(cluster: Cluster<Attraction>): Boolean {
         val builder = LatLngBounds.Builder()
-        for (data: Company in cluster.items)
+        for (data: Attraction in cluster.items)
             builder.include(data.position)
 
         try {
@@ -98,9 +98,9 @@ class CompanyMarkerCluster(
         )
 
         override fun getInfoWindow(marker: Marker): View {
-            val company: Company = marker.tag as Company
-            binding.tvName.text = company.name
-            binding.tvCity.text = company.city
+            val attraction: Attraction = marker.tag as Attraction
+            binding.tvName.text = attraction.name
+            binding.tvCity.text = attraction.city
             return binding.root
         }
 
