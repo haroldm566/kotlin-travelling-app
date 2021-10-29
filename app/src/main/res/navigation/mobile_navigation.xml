@@ -70,6 +70,11 @@
         <action
             android:id="@+id/action_countrypage_fragment_to_popularphrases_fragment"
             app:destination="@id/navigation_popularphrases" />
+
+        <!-- Send user to attractions fragment -->
+        <action
+            android:id="@+id/action_countrypage_fragment_to_attractopms_fragment"
+            app:destination="@id/navigation_attractions" />
     </fragment>
 
     <!-- DASHBOARD FRAGMENT -->
@@ -160,6 +165,12 @@
         android:id="@+id/navigation_attractions"
         android:name="op.mobile.app.dev.mandha1.travelling.ui.attractions.AttractionsFragment"
         android:label="Attractions"
-        tools:layout="@layout/fragment_attractions" />
+        tools:layout="@layout/fragment_attractions">
+
+        <!-- Store country object in the fragment  -->
+        <argument
+            android:name="country"
+            app:argType="op.mobile.app.dev.mandha1.travelling.model.Country" />
+    </fragment>
 
 </navigation>

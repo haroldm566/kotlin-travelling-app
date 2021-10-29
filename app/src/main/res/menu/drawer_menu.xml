@@ -19,19 +19,5 @@
         <item
             android:id="@+id/navigation_settings"
             android:title="Settings" />
-
-        <item
-            android:id="@+id/navigation_attractions"
-            android:title="Attractions" />
-
-<!--        <item-->
-<!--            android:id=""-->
-<!--            android:title="" />-->
-
-        <item
-            android:id="@+id/navigation_texttranslation"
-            android:title="Translator" />
-
-
     </group>
 </menu>

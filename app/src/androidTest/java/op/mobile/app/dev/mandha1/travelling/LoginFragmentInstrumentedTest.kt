@@ -28,8 +28,8 @@ class LoginFragmentInstrumentedTest {
     @Before
     fun initValidString() {
         // Initialising variables marked with the lateinit keyword
-        emailAddressToBeTyped = "john.doe@email.com"
-        passwordToBeTyped = "john.doe"
+        emailAddressToBeTyped = "testemail"
+        passwordToBeTyped = "testemail"
     }
 
     @Test
@@ -44,9 +44,6 @@ class LoginFragmentInstrumentedTest {
 
         // click() is a ViewAction
         onView(withId(R.id.btn_login)).perform(click())
-
-        onView(withId(R.id.tv_home))
-            // matches(isDisplayed()) is a ViewAssertion
-            .check(matches(isDisplayed()))
+        onView(withId(R.id.tv_status)).check(matches(isDisplayed()))
     }
 }

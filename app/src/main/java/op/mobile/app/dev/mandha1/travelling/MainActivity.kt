@@ -37,13 +37,12 @@ class MainActivity : AppCompatActivity() {
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
+        val btmNavView: BottomNavigationView = findViewById(R.id.btm_nav_view)
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
 
-        //  Allows the bottom navigation to work
-        val btmNavView: BottomNavigationView = findViewById(R.id.btm_nav_view)
         btmNavView.setupWithNavController(navController)
 
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
