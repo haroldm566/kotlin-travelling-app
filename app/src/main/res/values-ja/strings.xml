@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- jp localization-->
+    <!-- Country page layout jp strings -->
     <string name="countrypage_label">%1$s 国のページ</string>
     <string name="pp_label">人気のフレーズ</string>
     <string name="qu_label">クイズ</string>
@@ -12,4 +12,17 @@
 
     <string name="view_phrases">フレーズを見る</string>
     <string name="view_attractions">アトラクションを見る</string>
+
+    <!-- Login/register layout jp strings -->
+    <string name="create_acc">アカウントの作成</string>
+    <string name="username">ユーザー名</string>
+    <string name="password">パスワード</string>
+    <string name="login">ログイン</string>
+    <string name="login_details">ログイン詳細</string>
+    <string name="delete_login_details">ログイン詳細の削除</string>
+    <string name="set_em">電子メールの設定</string>
+    <string name="set_pw">パスワードの設定</string>
+    <string name="confirm_pw">パスワードの確認</string>
+    <string name="reg_label">登録する</string>
+    <string name="reg_as_new_user">新規ユーザーとして登録する</string>
 </resources>

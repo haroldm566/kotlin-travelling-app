@@ -1,36 +1,39 @@
 <resources>
-    <string name="app_name">Travelling</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- Miscellaneous strings-->
+    <string name="tts">Text To Speech</string>
+    <string name="app_name">mandha1 Travelling Application</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-
     <string name="connection_error">Connection Error :(</string>
     <string name="loading">Loading…</string>
+    <string name="change_theme">Change theme</string>
+    <string name="translate_the_text">Enter text to be translated into target language</string>
+
+    <!-- Quiz layout strings -->
     <string name="country_quiz">%1$s Quiz</string>
     <string name="submit">Submit</string>
     <string name="correct">Correct</string>
     <string name="incorrect">Incorrect. %1$s was the correct answer</string>
     <string name="please_select_an_answer">Please select an answer</string>
     <string name="score">Score: %1$s</string>
+    <string name="back_home">Back to Home</string>
 
+    <!-- Login/register layout strings (localized for Japanese) -->
+    <string name="create_acc">Create Account</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="login_details">Login Details</string>
     <string name="delete_login_details">Delete Login Details</string>
+    <string name="set_em">Set email</string>
+    <string name="set_pw">Set password</string>
+    <string name="confirm_pw">Confirm password</string>
+    <string name="reg_label">Register</string>
+    <string name="reg_as_new_user">Register as a new user</string>
 
-    <string name="tts">Text To Speech</string>
-
-    <!-- Country page strings for localization-->
-<!--    <string name=""></string>-->
+    <!-- Country page layout strings (localized for Japanese) -->
     <string name="countrypage_label">%1$s Country Page</string>
     <string name="pp_label">Popular Phrases</string>
     <string name="qu_label">Quiz</string>

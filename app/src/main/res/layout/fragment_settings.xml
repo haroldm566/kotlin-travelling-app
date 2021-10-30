@@ -16,7 +16,7 @@
         android:layout_marginBottom="343dp"
         android:backgroundTint="#BAA6A6"
         android:backgroundTintMode="add"
-        android:text="Change Theme"
+        android:text="@string/change_theme"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -40,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:afterTextChanged="@{textTranslationViewModel::setToBeTranslatedText}"
-                android:hint="Enter text to be translated into target language"
+                android:hint="@string/translate_the_text"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
