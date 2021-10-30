@@ -32,6 +32,7 @@
     <string name="confirm_pw">Confirm password</string>
     <string name="reg_label">Register</string>
     <string name="reg_as_new_user">Register as a new user</string>
+    <string name="email_addr">Email Address</string>
 
     <!-- Country page layout strings (localized for Japanese) -->
     <string name="countrypage_label">%1$s Country Page</string>
