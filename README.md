@@ -2,6 +2,8 @@
 
 ## Privacy Policy
 
+[Link to Privacy Policy](https://www.app-privacy-policy.com/live.php?token=RLF0oO2IBjTCGRKQKH4VOirImrqJquvG)
+
 ## User Guide
 
 This user guide details what you can do on each screen of the application.
@@ -47,6 +49,11 @@ The summarized features of these screens are:
   
 * Attractions
   * Shows you where the popular tourist attractions are in the country using Google Maps
+  
+### Settings Page
+
+Here you can adjust the theme of the application. You can choose between light and dark mode. Your
+chosen theme will persist even when the app is closed.
 
 ## Google Play Store Link
 
