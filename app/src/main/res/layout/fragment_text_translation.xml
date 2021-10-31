@@ -58,7 +58,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView"
             app:layout_constraintVertical_bias="0.414" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_translate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_translatedText"
             app:layout_constraintVertical_bias="0.0" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_tts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
