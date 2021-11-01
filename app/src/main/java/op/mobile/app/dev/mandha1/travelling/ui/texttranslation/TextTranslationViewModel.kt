@@ -42,8 +42,10 @@ class TextTranslationViewModel(_country: Country, _tts: TextToSpeech) : ViewMode
         }
     }
 
-    //  Put together completed request url for translated text
-    //  and send a get request
+    /**
+     * Put together valid request url for translated text
+     * and send a get request
+     */
     fun getTranslatedText(text: String?) {
         viewModelScope.launch {
             _status.value = ServiceStatus.LOADING
@@ -60,13 +62,17 @@ class TextTranslationViewModel(_country: Country, _tts: TextToSpeech) : ViewMode
         }
     }
 
-    //  Get the inputted text from the TextInputEditText component from the layout fragment
-    //      and set that to be the text to be translated
+    /**
+     * Get the inputted text from the TextInputEditText component from the layout fragment
+     * and set that to be the text to be translated
+     */
     fun setToBeTranslatedText(editable: Editable) {
         _translateText.value = editable.toString()
     }
 
-    //  Have the TTS speak the text out loud
+    /**
+     * Have the TTS speak the text out loud
+     */
     fun speak(text: String) {
         tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, "")
     }

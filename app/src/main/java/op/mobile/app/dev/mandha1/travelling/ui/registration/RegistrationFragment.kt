@@ -31,10 +31,17 @@ class RegistrationFragment: Fragment() {
         val etConfirmPassword: EditText = view.findViewById(R.id.reg_confirm_password)
 
         btnRegister.setOnClickListener {
+            /**
+             * Get fields in registration fragment
+             */
             val email = etEmailAddress.text.toString()
             val password = etPassword.text.toString()
             val confirmPassword = etConfirmPassword.text.toString()
 
+            /**
+             * Error checking for fields
+             * Allow input when requirements met
+             */
             when {
                 email.isEmpty() ->
                     etEmailAddress.error = "Email is required."
@@ -55,6 +62,10 @@ class RegistrationFragment: Fragment() {
         return view
     }
 
+    /**
+     * Use Firebase function for registration
+     * Data stored in Firebase database
+     */
     private fun register(email: String, password: String) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener {
@@ -64,7 +75,9 @@ class RegistrationFragment: Fragment() {
                         "User created.",
                         Toast.LENGTH_LONG
                     ).show()
-                    //  Send user to login screen after registering
+                    /**
+                     * Redirect user to login screen when done
+                     */
                     view?.findNavController()?.navigate(
                         RegistrationFragmentDirections.actionRegisterFragmentToLoginFragment()
                     )

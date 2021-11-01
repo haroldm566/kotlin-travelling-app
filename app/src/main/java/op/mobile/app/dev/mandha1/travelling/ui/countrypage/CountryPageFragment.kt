@@ -33,28 +33,30 @@ class CountryPageFragment : Fragment() {
 
         val viewModel: CountryPageViewModel by viewModels { viewModelFactory }
 
-        //  Directions to go to the Quiz fragment,
-        //      passing country object to said fragment
-        val action = CountryPageFragmentDirections
+        /**
+         * Directions to go to multiple fragments
+         * In order:
+         * - To quiz
+         * - To text translation
+         * - To popular phrases
+         * - To attractions
+         */
+        val toQuiz = CountryPageFragmentDirections
             .actionCountrypageFragmentToQuizFragment(
                 viewModel.country
             )
 
-        //  Directions to go to the text translation fragment,
-        //        passing country object to said fragment
-        val action2 = CountryPageFragmentDirections
+        val toTxtTr = CountryPageFragmentDirections
             .actionCountrypageFragmentToTexttranslationFragment(
                 viewModel.country
             )
 
-        //  Directions to go to the popular phrases fragment,
-        //        passing country object to said fragment
-        val action3 = CountryPageFragmentDirections
+        val toPplrPhr = CountryPageFragmentDirections
             .actionCountrypageFragmentToPopularphrasesFragment(
                 viewModel.country
             )
 
-        val action4 = CountryPageFragmentDirections
+        val toAttr = CountryPageFragmentDirections
             .actionCountrypageFragmentToAttractionsFragment(
                 viewModel.country
             )
@@ -63,28 +65,28 @@ class CountryPageFragment : Fragment() {
             lifecycleOwner = viewLifecycleOwner
             countryPageViewModel = viewModel
 
-            //  Go to the quiz fragment, passing country object to it
-            //      when button is pressed
+            /**
+             *  Set which fragments the buttons should lead to
+             *  In same order:
+             * - To quiz
+             * - To text translation
+             * - To popular phrases
+             * - To attractions
+             */
             btnPlay.setOnClickListener {
-                it.findNavController().navigate(action)
+                it.findNavController().navigate(toQuiz)
             }
 
-            //  Go to the text translation fragment, passing country object to it
-            //      when button is pressed
             btnTt.setOnClickListener {
-                it.findNavController().navigate(action2)
+                it.findNavController().navigate(toTxtTr)
             }
 
-            //  Go to the popular phrases fragment, passing country object to it
-            //      when button is pressed
             btnPp.setOnClickListener {
-                it.findNavController().navigate(action3)
+                it.findNavController().navigate(toPplrPhr)
             }
 
-            //  Go to the attractions fragment, passing country object to it
-            //      when button is pressed
             btnAttractions.setOnClickListener {
-                it.findNavController().navigate(action4)
+                it.findNavController().navigate(toAttr)
             }
 
             return root

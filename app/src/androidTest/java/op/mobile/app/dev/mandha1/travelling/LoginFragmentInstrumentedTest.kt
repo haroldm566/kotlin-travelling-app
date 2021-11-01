@@ -35,7 +35,7 @@ class LoginFragmentInstrumentedTest {
     @Test
     fun login() {
         // withId(R.id.et_email_address) is a ViewMatcher
-        onView(withId(R.id.et_username))
+        onView(withId(R.id.et_emailaddr))
             // typeText() is a ViewAction
             .perform(typeText(emailAddressToBeTyped), closeSoftKeyboard())
 
@@ -44,6 +44,6 @@ class LoginFragmentInstrumentedTest {
 
         // click() is a ViewAction
         onView(withId(R.id.btn_login)).perform(click())
-        onView(withId(R.id.tv_status)).check(matches(isDisplayed()))
+        onView(withId(R.id.rv_countries)).check(matches(isDisplayed()))
     }
 }

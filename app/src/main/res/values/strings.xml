@@ -1,5 +1,9 @@
 <resources>
     <!-- Miscellaneous strings-->
+    <string name="login_label">Login</string>
+    <string name="home_label">Home</string>
+    <string name="settings_label">Settings</string>
+
     <string name="tts">Text To Speech</string>
     <string name="app_name">mandha1 Travelling Application</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -14,9 +18,9 @@
     <!-- Quiz layout strings -->
     <string name="country_quiz">%1$s Quiz</string>
     <string name="submit">Submit</string>
-    <string name="correct">Correct</string>
-    <string name="incorrect">Incorrect. %1$s was the correct answer</string>
-    <string name="please_select_an_answer">Please select an answer</string>
+    <string name="correct">Correct!</string>
+    <string name="incorrect">Incorrect. %1$s was the correct answer.</string>
+    <string name="please_select_an_answer">Please select an answer.</string>
     <string name="score">Score: %1$s</string>
     <string name="back_home">Back to Home</string>
 
@@ -33,6 +37,7 @@
     <string name="reg_label">Register</string>
     <string name="reg_as_new_user">Register as a new user</string>
     <string name="email_addr">Email Address</string>
+    <string name="sign_out">Sign Out</string>
 
     <!-- Country page layout strings (localized for Japanese) -->
     <string name="countrypage_label">%1$s Country Page</string>

@@ -2,11 +2,13 @@ package op.mobile.app.dev.mandha1.travelling.ui.quiz.results
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.activity.addCallback
+import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -40,17 +42,10 @@ class QuizResultsFragment : Fragment() {
         val action = QuizResultsFragmentDirections
             .actionQuizFragmentToHomeFragment()
 
-        /**
-         * This disables the back button. You can not go to the
-         * previous Fragment (not working)
-         */
-        activity?.onBackPressedDispatcher?.addCallback(this) {}
-
         binding.apply {
             lifecycleOwner = viewLifecycleOwner
             quizResultsViewModel = viewModel
 
-            //  Crashes
             btnBackToHome.setOnClickListener {
                 it.findNavController().navigate(action)
             }

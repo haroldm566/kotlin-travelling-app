@@ -2,6 +2,7 @@ package op.mobile.app.dev.mandha1.travelling.ui.quiz
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
@@ -13,7 +14,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import op.mobile.app.dev.mandha1.travelling.R
 import op.mobile.app.dev.mandha1.travelling.databinding.FragmentQuizBinding
-
 
 class QuizFragment : Fragment() {
     private lateinit var viewModel: QuizViewModel
@@ -90,17 +90,6 @@ class QuizFragment : Fragment() {
                     var answerIdx = 0
 
                     /**
-                    For example:
-
-                    "answers": [
-                    "Secret ballots", Correct answer
-                    "Write-in nominations", Incorrect answer
-                    "Recounting of votes", Incorrect answer
-                    "All of the above" Incorrect answer
-                    ],
-                     */
-
-                    /**
                      * When a RadioButton is checked, get the answer's index.
                      * It will be important in getting the index's value
                      */
@@ -117,20 +106,17 @@ class QuizFragment : Fragment() {
                         == correctAnswer
                     ) {
                         /**
-                         * Self-directed learning:
                          * - Add to the score
                          * - Display a message for a correct answer
                          */
                         viewModel.addScore()
-                        Toast.makeText(activity, "Correct answer!", Toast.LENGTH_LONG).show()
+                        Toast.makeText(activity, getString(R.string.correct), Toast.LENGTH_LONG).show()
 
                     } else {
                         /**
-                         * Self-directed learning:
-                         *
                          * Display a message for an incorrect answer
                          */
-                        Toast.makeText(activity, "Wrong answer...", Toast.LENGTH_LONG).show()
+                        Toast.makeText(activity, getString(R.string.incorrect, correctAnswer), Toast.LENGTH_LONG).show()
                     }
 
                     viewModel.addQuestionIdx()
@@ -155,7 +141,7 @@ class QuizFragment : Fragment() {
                      *
                      * Display a message if a RadioButton is not clicked
                      */
-                    Toast.makeText(activity, "Please select an answer.", Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity, getString(R.string.please_select_an_answer), Toast.LENGTH_LONG).show()
                 }
             }
 
@@ -176,4 +162,6 @@ class QuizFragment : Fragment() {
             )
         findNavController().navigate(action)
     }
+
+
 }

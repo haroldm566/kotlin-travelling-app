@@ -59,8 +59,12 @@ class AttractionsFragment : Fragment(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         val attractions = AttractionJSONReader(requireContext()).read()
 
-        //  Only get attractions with specified country name
-        //      Scalable by adding more JSON entries
+        /**
+         * Only get JSON data with specified country name
+         * so the attractions shown are only the ones from said specified country
+         *
+         * Scalable by adding more JSON entries
+         */
         val specificAttractions = mutableListOf<Attraction>()
         for (i in attractions) {
             if (i.country == viewModel.country.name) {
@@ -74,7 +78,9 @@ class AttractionsFragment : Fragment(), OnMapReadyCallback {
         clusterManager.addItems(specificAttractions)
         clusterManager.cluster()
 
-        //  Snap the camera to the first attraction for a specific country
+        /**
+         * Snap the camera to the first attraction
+         */
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(specificAttractions[0].position, 10f))
     }
 }

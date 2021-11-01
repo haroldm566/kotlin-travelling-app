@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
@@ -19,9 +21,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-
-
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -58,14 +57,15 @@ class MainActivity : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(NightMode);
 
         //  Hide drawer and bottom nav view layouts if not logged in (unfinished)
-        auth = FirebaseAuth.getInstance()
-
-        if (auth.currentUser == null) {
-            btmNavView.isVisible = false
-        }
-        else {
-            Log.d("FIREBASECURRENTUSER", auth.currentUser!!.email.toString())
-        }
+//        auth = FirebaseAuth.getInstance()
+//        if (auth.currentUser == null) {
+//            val btnLogin: Button = findViewById(R.id.btn_login)
+//            btnLogin.visibility = View.INVISIBLE
+//        }
+//        else {
+//            val btnSignout: Button = findViewById(R.id.btn_signout)
+//            btnSignout.visibility = View.VISIBLE
+//        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

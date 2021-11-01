@@ -25,4 +25,10 @@
     <string name="confirm_pw">パスワードの確認</string>
     <string name="reg_label">登録する</string>
     <string name="reg_as_new_user">新規ユーザーとして登録する</string>
+    <string name="email_addr">電子メールアドレス</string>
+    <string name="sign_out">サインアウト</string>
+
+    <string name="login_label">ログイン</string>
+    <string name="home_label">家</string>
+    <string name="settings_label">設定</string>
 </resources>

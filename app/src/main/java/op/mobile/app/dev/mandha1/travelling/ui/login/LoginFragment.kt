@@ -25,7 +25,6 @@ class LoginFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View {
-
         val binding: FragmentLoginBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_login, container, false
         )
@@ -39,11 +38,15 @@ class LoginFragment : Fragment() {
 
         binding.loginViewModel = viewModel
 
-        //  FIREBASE AUTH
+        /**
+         * Instantiate Firebase auth
+         */
         auth = FirebaseAuth.getInstance()
 
-        //  Prompt user that they need to fill in the fields if they're empty
-        //      else allow input
+        /**
+         * Prompt user that they need to fill in the fields if they're empty,
+         * else allow input for login
+         */
         binding.btnLogin.setOnClickListener {
             val username = binding.etEmailaddr.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
@@ -53,7 +56,9 @@ class LoginFragment : Fragment() {
                 else -> viewModel.insertLoginDetail(Login(username, password))
             }
 
-            //  Using Firebase to log into the app via email and password
+            /**
+             * Call function from Firebase if login credentials are valid
+             */
             auth.signInWithEmailAndPassword(username, password).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(activity, "Successfully Logged In", Toast.LENGTH_LONG).show()
@@ -68,7 +73,9 @@ class LoginFragment : Fragment() {
             }
         }
 
-        //  Send user to registration fragment if they want to register
+        /**
+         * Send user to account registration page if they want to make an account
+         */
         binding.btnRegister.setOnClickListener {
             val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
             it.findNavController().navigate(action)
