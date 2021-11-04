@@ -55,17 +55,6 @@ class MainActivity : AppCompatActivity() {
         sharedPreferences = getSharedPreferences("SharedPrefs", MODE_PRIVATE);
         NightMode = sharedPreferences.getInt("NightModeInt", 1);
         AppCompatDelegate.setDefaultNightMode(NightMode);
-
-        //  Hide drawer and bottom nav view layouts if not logged in (unfinished)
-//        auth = FirebaseAuth.getInstance()
-//        if (auth.currentUser == null) {
-//            val btnLogin: Button = findViewById(R.id.btn_login)
-//            btnLogin.visibility = View.INVISIBLE
-//        }
-//        else {
-//            val btnSignout: Button = findViewById(R.id.btn_signout)
-//            btnSignout.visibility = View.VISIBLE
-//        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

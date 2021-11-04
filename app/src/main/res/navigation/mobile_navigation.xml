@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_login">
+    app:startDestination="@+id/navigation_splashscreen">
     <!-- Change app:startDestination to test different screens on launch -->
     <!-- navigation_splashscreen is default -->
 
-    <!-- REGISTRATION FRAGMENT -->
+    <!-- SPLASHSCREEN FRAGMENT -->
     <fragment
-        android:id="@+id/navigation_register"
-        android:name="op.mobile.app.dev.mandha1.travelling.ui.registration.RegistrationFragment"
-        android:label="Register"
-        tools:layout="@layout/fragment_registration">
+        android:id="@+id/navigation_splashscreen"
+        android:name="op.mobile.app.dev.mandha1.travelling.ui.splashscreen.SplashScreenFragment"
+        android:label="SplashScreen"
+        tools:layout="@layout/fragment_splash_screen">
         <action
-            android:id="@+id/action_register_fragment_to_login_fragment"
+            android:id="@+id/action_splash_screen_fragment_to_login_fragment"
             app:destination="@id/navigation_login" />
     </fragment>
 
@@ -30,6 +30,17 @@
         <action
             android:id="@+id/action_login_fragment_to_register_fragment"
             app:destination="@id/navigation_register" />
+    </fragment>
+
+    <!-- REGISTRATION FRAGMENT -->
+    <fragment
+        android:id="@+id/navigation_register"
+        android:name="op.mobile.app.dev.mandha1.travelling.ui.registration.RegistrationFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_registration">
+        <action
+            android:id="@+id/action_register_fragment_to_login_fragment"
+            app:destination="@id/navigation_login" />
     </fragment>
 
     <!-- HOME FRAGMENT -->
@@ -77,30 +88,12 @@
             app:destination="@id/navigation_attractions" />
     </fragment>
 
-    <!-- DASHBOARD FRAGMENT -->
-    <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="op.mobile.app.dev.mandha1.travelling.ui.dashboard.DashboardFragment"
-        android:label="Dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
     <!-- NOTIFICATIONS FRAGMENT -->
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="op.mobile.app.dev.mandha1.travelling.ui.notifications.NotificationsFragment"
         android:label="Notifications"
         tools:layout="@layout/fragment_notifications" />
-
-    <!-- SPLASHSCREEN FRAGMENT -->
-    <fragment
-        android:id="@+id/navigation_splashscreen"
-        android:name="op.mobile.app.dev.mandha1.travelling.ui.splashscreen.SplashScreenFragment"
-        android:label="SplashScreen"
-        tools:layout="@layout/fragment_splash_screen">
-        <action
-            android:id="@+id/action_splash_screen_fragment_to_login_fragment"
-            app:destination="@id/navigation_login" />
-    </fragment>
 
     <!-- POPULAR PHRASES FRAGMENT -->
     <fragment
