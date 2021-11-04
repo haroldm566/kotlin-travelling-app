@@ -17,7 +17,7 @@ fields and then tapping the login button to log in.
 If you don't have an account, you must create one by tapping the 'create account' button before you can
 do the above.
 
-![](https://i.imgur.com/Y4ONCoZ.jpg)
+<img src="https://i.imgur.com/Y4ONCoZ.jpg" width=25% height=25%>
 
 ### Register Page
 
@@ -28,46 +28,48 @@ done you can tap the 'register' button to create your account.
 Please ensure that the email you enter is unique. Once you have an account then you can go back to the
 login page to log into the application.
 
-![]()
-
 ### Home Page
 
 After logging into the application, you'll be shown a list of countries that you can pick from. Choose
 the country you want to learn about by tapping on it.
 
-![](https://i.imgur.com/bvsnQTQ.jpg)
+<img src="https://i.imgur.com/bvsnQTQ.jpg" width=25% height=25%>
 
 ### Country Page
 
-![](https://i.imgur.com/grrCN1g.jpg)
+<img src="https://i.imgur.com/grrCN1g.jpg" width=25% height=25%>
 
 Displayed here are different screens you can go into to learn about various aspects about a country.
 The summarized features of these screens are:
 
 * Popular Phrases
-![](https://i.imgur.com/0YqsFjS.jpg)
+
   * Shows you three phrases that are often used in the country
+<img src="https://i.imgur.com/0YqsFjS.jpg" width=25% height=25%>
   
 * Quiz
-![](https://i.imgur.com/Bw17zmL.jpg)
+
   * Play a multiple-choice quiz containing five questions about the country
   * Your score will be displayed after doing it
+<img src="https://i.imgur.com/Bw17zmL.jpg" width=25% height=25%>
 
 * Text Translation
-![](https://i.imgur.com/H0KesYS.jpg)
+
   * If applicable, you can enter any text into the field and translate it into the country's language
   * Once the text is translated, you can also tap the text-to-speech button to hear how it's pronounced
-  
+<img src="https://i.imgur.com/H0KesYS.jpg" width=25% height=25%>
+
 * Attractions
-![](https://i.imgur.com/x2mHhH3.jpg)
+
   * Shows you where the popular tourist attractions are in the country using Google Maps
-  
+<img src="https://i.imgur.com/x2mHhH3.jpg" width=25% height=25%>
+
 ### Settings Page
 
 Here you can adjust the theme of the application. You can choose between light and dark mode. Your
 chosen theme will persist even when the app is closed.
 
-![](https://i.imgur.com/M2phUTl.jpg)
+<img src="https://i.imgur.com/M2phUTl.jpg" width=25% height=25%>
 
 ## Google Play Store Link
 
@@ -95,6 +97,7 @@ Change your phone/emulator's language to Japanese to test it out.
 
 ## Requirements Checklist
 
+### Functionality (Features)
 - [x] Application must open without file structure modification in Android Studio.
 - [x] Application must run without code modification on a mobile device.
 - [x] Application must run on API 28: Android 9.0 (Pie).
@@ -114,7 +117,7 @@ Change your phone/emulator's language to Japanese to test it out.
 - [ ] Ability to download your application from Google Play Store on to a mobile device.
 - [ ] UI tests which verify that the sign up & login is functioning correctly.
 
-
+### Code Elegance
 - [x] Kotlin & XML files contain no magic numbers/strings. Store the values in the appropriate XML files.
 - [x] Idiomatic use of control flow, data structures & in-built functions.
 - [x] Code adheres to DRY, KISS & the Model-View-ViewModel architectural pattern.
@@ -122,11 +125,11 @@ Change your phone/emulator's language to Japanese to test it out.
 - [x] Kotlin & XML files are code formatted.
 - [x] No unused code & resources.
 
+### Documentation & Git/GitHub Usage
 - [x] URL to your application’s privacy policy.
 - [x] Sketched wireframes of your application.
 - [x] Step-by-step user guide detailing each screen.
-- [ ] (50%) Commented code is documented using KDoc & generated to Markdown using Dokka.
+- [x] (50%) Commented code is documented using KDoc ~~& generated to Markdown using Dokka.~~
 - [ ] URL to your application on Google Play Store.
 - [ ] Continuous integration using GitHub Actions.
-- [ ] Commit messages must reflect the context of each functional requirement change. 
-
+- [x] Commit messages must reflect the context of each functional requirement change. 
