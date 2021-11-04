@@ -114,7 +114,7 @@ Change your phone/emulator's language to Japanese to test it out.
 - [x] BottomNavigationView which navigates the user to various features in the application.
 - [ ] Visually attractive UI with a coherent graphical theme & style using Material Design.
 - [x] Application is published to Google Play Store.
-- [ ] Ability to download your application from Google Play Store on to a mobile device.
+- [ ] (Pending Review) Ability to download your application from Google Play Store on to a mobile device.
 - [ ] UI tests which verify that the sign up & login is functioning correctly.
 
 ### Code Elegance
@@ -130,6 +130,6 @@ Change your phone/emulator's language to Japanese to test it out.
 - [x] Sketched wireframes of your application.
 - [x] Step-by-step user guide detailing each screen.
 - [x] (50%) Commented code is documented using KDoc ~~& generated to Markdown using Dokka.~~
-- [ ] URL to your application on Google Play Store.
+- [ ] (Pending Review) URL to your application on Google Play Store.
 - [ ] Continuous integration using GitHub Actions.
 - [x] Commit messages must reflect the context of each functional requirement change. 
