@@ -18,11 +18,10 @@ class SplashScreenFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_splash_screen, container, false)
 
         Handler().postDelayed({
-            val action = SplashScreenFragmentDirections
-                .actionSplashScreenFragmentToLoginFragment()
-            view?.findNavController()
-                ?.navigate(action) // Calling the navigation action declared in mobile_navigation.xml
-
+            view?.post {
+                view?.findNavController()
+                    ?.navigate(R.id.action_splash_screen_fragment_to_login_fragment) // Calling the navigation action declared in mobile_navigation.xml
+            }
         }, 3000)
 
         return view
